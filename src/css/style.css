@@ -95,6 +95,31 @@ body {
   overflow: scroll;
 }
 
+.tvCard {
+  display: flex;
+  width: 500px;
+  height: 300px;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+.tvCard_poster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+}
+.tvCard_infos {
+  padding: 15px;
+}
+.tvCard_infos h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.tvCard_infos p {
+  height: 80%;
+  overflow: scroll;
+}
+
 .active {
   color: blue;
 }
@@ -133,6 +158,9 @@ header {
   margin-top: 20px;
   width: 500px;
 }
+.movieList_pagesBtn_btn--active {
+  color: red;
+}
 
 .movieBackdrop {
   display: flex;
@@ -169,6 +197,18 @@ header {
 }
 .movieBackdrop_container_infos_bottom_left {
   display: flex;
+}
+
+.tvList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tvList_options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 500px;
 }
 
 /*# sourceMappingURL=style.css.map */

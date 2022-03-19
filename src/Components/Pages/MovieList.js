@@ -5,10 +5,10 @@ import { v4 as uuidv4 } from 'uuid';
 const MovieList = () => {
 
     const [dataMovieList, setDataMovieList] = useState([]);
-    const [movieListOption, setMovieListOption] = useState(["popularity", "desc"]);
+    const [movieListOption, setMovieListOption] = useState(["popularity", "desc", 1]);
     
     useEffect(() => {
-        fetch('https://api.themoviedb.org/3/discover/movie?api_key=' + process.env.REACT_APP_API_KEY +'&language=fr-FR&sort_by=' + movieListOption[0] + '.' + movieListOption[1] + '&include_adult=false&include_video=false&page=1&vote_count.gte=400')
+        fetch('https://api.themoviedb.org/3/discover/movie?api_key=' + process.env.REACT_APP_API_KEY +'&language=fr-FR&sort_by=' + movieListOption[0] + '.' + movieListOption[1] + '&include_adult=false&include_video=false&page=' + movieListOption[2] + '&vote_count.gte=400')
         .then(res => res.json())
         .then(datas => {
             let arr = [];
@@ -33,6 +33,7 @@ const MovieList = () => {
             let newArr = [];
             newArr.push(value);
             newArr.push(movieListOption[1]);
+            newArr.push(movieListOption[2]);
             setMovieListOption(newArr);
         }   
     }
@@ -42,8 +43,19 @@ const MovieList = () => {
             let newArr = [];
             newArr.push(movieListOption[0]);
             newArr.push(value);
+            newArr.push(movieListOption[2]);
             setMovieListOption(newArr);
         }
+    }
+
+    const changePage = (val) => {
+        let numb = movieListOption[2];
+        numb = numb + val;
+        let newArr = [];
+        newArr.push(movieListOption[0]);
+        newArr.push(movieListOption[1]);
+        newArr.push(numb); 
+        setMovieListOption(newArr);
     }
     
     return (
@@ -68,6 +80,13 @@ const MovieList = () => {
                       )
                     })}      
             </ul>
+            <div className="movieList_pagesBtn">
+                {(movieListOption[2] !== 1) && <button onClick={() => changePage(-1)} className='movieList_pagesBtn_btn'>{movieListOption[2] - 1}</button>}
+                <button className='movieList_pagesBtn_btn movieList_pagesBtn_btn--active'>{movieListOption[2]}</button>
+                <button onClick={() => changePage(1)} className='movieList_pagesBtn_btn'>{movieListOption[2] + 1}</button>
+                <button onClick={() => changePage(2)} className='movieList_pagesBtn_btn'>{movieListOption[2] + 2}</button>
+                <button onClick={() => changePage(3)} className='movieList_pagesBtn_btn'>{movieListOption[2] + 3}</button>
+            </div>
         </main>
         </>
     );

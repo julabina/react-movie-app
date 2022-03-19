@@ -5,6 +5,8 @@ import NotFound from "./Components/Pages/NotFound";
 import { Route, Routes } from "react-router-dom";
 import Movie from "./Components/Pages/Movie";
 import MovieList from "./Components/Pages/MovieList";
+import Tv from "./Components/Pages/Tv";
+import TvList from "./Components/Pages/TvList";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path="/movie" element={<MovieList />} />
         <Route path='/movie/:id' element={<Movie />} />
+        <Route path="/tv" element={<TvList />} />
+        <Route path="/tv/:id" element={<Tv />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
