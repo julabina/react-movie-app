@@ -1,7 +1,16 @@
 header {
+    display: flex;
+    justify-content: space-between;
     background: salmon;
     border: 1px solid green;
     height: 40px;
     text-align: center;
-    padding-top: 10px;
+    padding: 10px;
+}
+
+.headerOption {
+    display: flex;
+    &_darkmod {
+        display: flex;
+    }
 }

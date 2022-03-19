@@ -13,12 +13,11 @@ const Movie = () => {
             fetch('https://api.themoviedb.org/3/movie/' + params.id + '/credits?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR').then(res => res.json())
         ])
         .then(datas => {
-            console.log(datas[1]);
             let director;
             let movieGenre = [];
+            console.log(datas[0]);
             for (let i = 0;i < datas[1].crew.length;i++) {
                 if (datas[1].crew[i].job === "Director") {
-                    console.log(datas[1].crew[i]);
                     director = datas[1].crew[i].name;
                 }
             }

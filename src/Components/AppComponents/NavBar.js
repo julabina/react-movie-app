@@ -4,9 +4,15 @@ import { NavLink } from 'react-router-dom';
 const NavBar = () => {
     return (
         <nav>
-            <NavLink to="/" >Accueil</NavLink>
-            <NavLink to="/movie">Film</NavLink>
-            <NavLink to="/tv">Serie tv</NavLink>
+            <NavLink to="/" className={({isActive}) => {
+                return isActive ? "active" : "";
+            }} >Accueil</NavLink>
+            <NavLink to="/movie" className={({isActive}) => {
+                return isActive ? "active" : "";
+            }} >Film</NavLink>
+            <NavLink to="/tv" className={({isActive}) => {
+                return isActive ? "active" : "";
+            }} >Serie tv</NavLink>
         </nav>
     );
 };

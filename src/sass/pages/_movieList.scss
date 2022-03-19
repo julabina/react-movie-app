@@ -1,0 +1,11 @@
+.movieList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &_options {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        width: 500px;
+    }
+}

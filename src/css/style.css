@@ -59,6 +59,7 @@ table {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -94,12 +95,25 @@ body {
   overflow: scroll;
 }
 
+.active {
+  color: blue;
+}
+
 header {
+  display: flex;
+  justify-content: space-between;
   background: salmon;
   border: 1px solid green;
   height: 40px;
   text-align: center;
-  padding-top: 10px;
+  padding: 10px;
+}
+
+.headerOption {
+  display: flex;
+}
+.headerOption_darkmod {
+  display: flex;
 }
 
 .home ul {
@@ -108,10 +122,16 @@ header {
   align-items: center;
 }
 
-main {
+.movieList {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.movieList_options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 500px;
 }
 
 .movieBackdrop {
