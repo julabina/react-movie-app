@@ -1,9 +1,10 @@
 import React from 'react'; 
+import NavBar from '../AppComponents/NavBar';
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header>
-            <h1>TITRE HEADER</h1>
+            <NavBar />
         </header>
     );
 };

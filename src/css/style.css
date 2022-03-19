@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -60,31 +61,35 @@ a {
   text-decoration: none;
 }
 
-.homeCard {
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.movieCard {
   display: flex;
   width: 500px;
   height: 300px;
   border: 1px solid black;
   margin-top: 20px;
 }
-.homeCard_poster {
+.movieCard_poster {
   display: flex;
   justify-content: center;
   align-items: center;
   background: #333;
 }
-.homeCard_infos {
+.movieCard_infos {
   padding: 15px;
 }
-.homeCard_infos h2 {
+.movieCard_infos h2 {
   text-align: center;
   margin-bottom: 10px;
 }
-.homeCard_infos h3 {
+.movieCard_infos h3 {
   font-size: 0.7em;
   margin-bottom: 15px;
 }
-.homeCard_infos p {
+.movieCard_infos p {
   height: 80%;
   overflow: scroll;
 }
@@ -101,6 +106,49 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movieBackdrop {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 600px;
+  width: 100%;
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+.movieBackdrop_container {
+  display: flex;
+  color: white;
+  margin-bottom: -150px;
+}
+.movieBackdrop_container_infos {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  width: 800px;
+  background: rgba(0, 0, 0, 0.616);
+}
+.movieBackdrop_container_infos_top h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+.movieBackdrop_container_infos_bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.movieBackdrop_container_infos_bottom_left {
+  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */

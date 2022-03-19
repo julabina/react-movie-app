@@ -1,7 +1,9 @@
 @import './base/reset';
+@import './base/typography';
 
-@import './componants/homeCard';
+@import './componants/movieCard';
 
 @import './layout/header';
 
 @import './pages/home';
+@import './pages/movie';

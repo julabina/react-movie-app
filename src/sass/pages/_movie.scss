@@ -1,0 +1,43 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movieBackdrop {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 600px;
+    width: 100%;
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    &_container {     
+        display: flex; 
+        color: white;
+        margin-bottom: -150px;
+        &_infos {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 200px;width: 800px;
+            background: rgba(0, 0, 0, 0.616);
+            &_top {
+                h1 {
+                    font-size: 2em;
+                    font-weight: 700;
+                }
+            }
+            &_bottom {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                &_left {
+                    display: flex;
+                }
+            }
+        }
+    }
+}

@@ -1,14 +1,22 @@
-import Header from "./Layout/Header";
+import Header from "./Components/Layout/Header";
 import './css/style.css';
-import Home from "./Pages/Home";
+import Home from "./Components/Pages/Home";
+import NotFound from "./Components/Pages/NotFound";
+import { Route, Routes } from "react-router-dom";
+import Movie from "./Components/Pages/Movie";
+import MovieList from "./Components/Pages/MovieList";
 
 function App() {
-  console.log(process.env.REACT_APP_API_KEY)
   return (
-    < >
+    <div className="app">
       <Header />
-      <Home />
-    </>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path="/movie" element={<MovieList />} />
+        <Route path='/movie/:id' element={<Movie />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+    </div>
   );
 }
 
