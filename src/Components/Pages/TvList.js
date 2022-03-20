@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TvCard from '../AppComponents/TvCard';
 import { v4 as uuidv4 } from 'uuid';
+import TvNavBar from '../AppComponents/TvNavBar';
 
 const TvList = () => {
 
@@ -30,6 +31,8 @@ const TvList = () => {
 
     return (
         <main className='tvList'>
+            <TvNavBar />
+            <div className="tvList_options"></div>
             <ul>
                 {tvDatasList.map((el) => {
                 return  <TvCard title={el.title} key={el.id} id={el.id} poster={el.poster} overview={el.overview} tvId={el.tvId} />

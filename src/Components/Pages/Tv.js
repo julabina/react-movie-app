@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import TvNavBar from '../AppComponents/TvNavBar';
 
 const Tv = () => {
 
@@ -49,6 +50,7 @@ const Tv = () => {
 
     return (
         <main>
+            <TvNavBar />
             <div className='tvBackdrop' style={{
                 backgroundImage: 'url("' + tvBDrop + '")'
             }} >

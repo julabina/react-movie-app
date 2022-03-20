@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import MovieNavBar from '../AppComponents/MovieNavBar';
 
 const Movie = () => {
 
@@ -50,6 +51,7 @@ const Movie = () => {
     return (
         <>
         <main>
+        <MovieNavBar />
             <div className='movieBackdrop' style={{
                 backgroundImage: 'url("' + bDrop + '")'
             }} >

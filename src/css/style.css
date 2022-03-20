@@ -122,6 +122,34 @@ body {
 
 .active {
   color: blue;
+  background: salmon;
+}
+
+.mainNavBar {
+  display: flex;
+  height: 40px;
+}
+.mainNavBar_linkCont_link {
+  display: inline-block;
+  padding-top: 10px;
+  height: 100%;
+}
+
+.movieNavBar, .tvNavBar {
+  display: flex;
+}
+.movieNavBar_linkCont, .tvNavBar_linkCont {
+  margin-right: 15px;
+}
+
+.littleNavBar {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  border-bottom: 1px solid black;
+  background: salmon;
 }
 
 header {
@@ -134,7 +162,7 @@ header {
   background: #ebebeb;
   height: 40px;
   text-align: center;
-  padding: 10px;
+  padding: 0 10px;
 }
 
 .headerOption {
@@ -162,7 +190,7 @@ main {
 .movieList_options {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 40px;
   width: 500px;
 }
 .movieList_pagesBtn_btn--active {
@@ -321,7 +349,7 @@ main {
 .tvList_options {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 40px;
   width: 500px;
 }
 

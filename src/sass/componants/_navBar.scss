@@ -1,3 +1,36 @@
-.active {
-    color: blue;
+.active  {
+    
+        color: blue;
+        background: salmon;
+        
+    }
+    
+.mainNavBar {
+    display: flex;
+    height: 40px;
+    &_linkCont {
+        &_link {
+            display: inline-block;
+            padding-top: 10px;
+            height: 100%;
+        }
+    }
 }
+
+.movieNavBar, .tvNavBar {
+    display: flex;
+    &_linkCont {
+        margin-right: 15px;
+    }
+}
+
+.littleNavBar {
+    position: fixed;
+    top: 40px;
+    left: 0;right: 0;
+    height: 20px;
+    border-bottom: 1px solid black;
+    background: salmon;
+}
+
+

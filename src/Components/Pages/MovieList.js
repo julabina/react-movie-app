@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MovieCard from '../AppComponents/MovieCard';
 import { v4 as uuidv4 } from 'uuid';
+import MovieNavBar from '../AppComponents/MovieNavBar';
 
 const MovieList = () => {
 
@@ -61,6 +62,7 @@ const MovieList = () => {
     return (
         <>
         <main className='movieList'> 
+        <MovieNavBar />
         <div className="movieList_options">
             <select name="sortBy" onChange={(e) => sortList(e.target.value)}>
                 <option defaultChecked value="popularity">Popularité</option>
