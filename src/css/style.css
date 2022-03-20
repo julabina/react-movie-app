@@ -261,6 +261,58 @@ main {
   text-indent: 30px;
 }
 
+.tvBackdrop {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 600px;
+  width: 100%;
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+.tvBackdrop_container {
+  display: flex;
+  color: white;
+  margin-bottom: -150px;
+}
+.tvBackdrop_container_infos {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  width: 800px;
+  background: rgba(0, 0, 0, 0.616);
+}
+.tvBackdrop_container_infos_top h1 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.tvBackdrop_container_infos_bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.tvBackdrop_container_infos_bottom_left {
+  display: flex;
+  align-items: flex-end;
+}
+.tvBackdrop_container_infos_bottom_left_origin {
+  margin-right: 5px;
+}
+.tvBackdrop_container_infos_bottom_note {
+  font-size: 3em;
+}
+.tvBackdrop_container_poster {
+  height: 450px;
+  width: 300px;
+}
+.tvBackdrop_container_poster img {
+  max-height: 450px;
+}
+
 .tvList {
   display: flex;
   flex-direction: column;

@@ -46,10 +46,6 @@ const Movie = () => {
             setMovieData(item);
         })
     },[])
-
-    const movieTime = () => {
-        return 'trtete'
-    }
     
     return (
         <>
@@ -59,7 +55,7 @@ const Movie = () => {
             }} >
                 <div className="movieBackdrop_container">
                     <div className="movieBackdrop_container_poster">
-                        <img src={movieData.poster} alt="" />
+                        <img src={movieData.poster} alt={'affiche du film ' + movieData.title} />
                     </div>
                     <div className="movieBackdrop_container_infos">
                         <div className="movieBackdrop_container_infos_top">

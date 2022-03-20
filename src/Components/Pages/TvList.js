@@ -7,7 +7,7 @@ const TvList = () => {
     const [tvDatasList, setTvDatasList] = useState([]);
 
     useEffect(() => {
-        fetch('https://api.themoviedb.org/3/discover/tv?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&sort_by=popularity.desc&page=1&vote_count.gte=300&include_null_first_air_dates=false&with_status=0')
+        fetch('https://api.themoviedb.org/3/discover/tv?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&without_genres=16&sort_by=popularity.desc&page=1&vote_count.gte=1000&include_null_first_air_dates=false')
         .then(res => res.json())
         .then(datas => {
             let arr = [];
