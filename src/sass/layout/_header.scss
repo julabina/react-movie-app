@@ -1,8 +1,10 @@
 header {
+    position: fixed;
+    top: 0;
+    right: 0;left: 0;
     display: flex;
     justify-content: space-between;
-    background: salmon;
-    border: 1px solid green;
+    background: map-get($map: $colors, $key: primary );
     height: 40px;
     text-align: center;
     padding: 10px;

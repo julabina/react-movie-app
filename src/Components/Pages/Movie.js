@@ -68,12 +68,21 @@ const Movie = () => {
                         </div>
                         <div className="movieBackdrop_container_infos_bottom">
                             <div className="movieBackdrop_container_infos_bottom_left">
-                                <p>{movieData.runtime}</p>
-                                <p>{movieData.genres}</p>
+                                <p className="movieBackdrop_container_infos_bottom_left_time">{movieData.runtime}</p>
+                                <p className="movieBackdrop_container_infos_bottom_left_genres">{movieData.genres}</p>
                             </div>
-                            <p>{movieData.vote}</p>
+                            <p className="movieBackdrop_container_infos_bottom_note">{movieData.vote}</p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="movieInfosContainer">
+                <div className="movieInfosContainer_release">
+                    <p>Date de sortie : <span>{movieData.release}</span></p>
+                </div>
+                <div className="movieInfosContainer_overview">
+                    <div className="movieInfosContainer_overview_header"><p className='movieInfosContainer_overview_header_title'>Synopsis</p></div>
+                    <p className='movieInfosContainer_overview_txt'>{movieData.overview}</p>
                 </div>
             </div>
         </main>

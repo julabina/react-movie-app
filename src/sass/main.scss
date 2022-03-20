@@ -1,3 +1,5 @@
+@import './utils/variables';
+
 @import './base/reset';
 @import './base/typography';
 
@@ -6,6 +8,7 @@
 @import './componants/navBar';
 
 @import './layout/header';
+@import './layout/main';
 
 @import './pages/home';
 @import './pages/movieList';
