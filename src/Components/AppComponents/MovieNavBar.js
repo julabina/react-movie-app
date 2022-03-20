@@ -4,14 +4,17 @@ import { NavLink } from 'react-router-dom';
 const MovieNavBar = () => {
     return (
             <nav className='littleNavBar movieNavBar'>
-                <div className="movieNavBar_linkCont">
-                    <NavLink to="" >Tous les films</NavLink>
+                <div className="toMovieHome">
+                    <NavLink to="/movie" >Home</NavLink>
                 </div>
                 <div className="movieNavBar_linkCont">
-                    <NavLink to="" >Les mieux notés</NavLink>
+                    <NavLink to="/movie/all" >Tous les films</NavLink>
                 </div>
                 <div className="movieNavBar_linkCont">
-                    <NavLink to="" >Les plus populaires</NavLink>
+                    <NavLink to="/movie/top_rated" >Les mieux notés</NavLink>
+                </div>
+                <div className="movieNavBar_linkCont">
+                    <NavLink to="/movie/popular" >Les plus populaires</NavLink>
                 </div>
             </nav>
     );
