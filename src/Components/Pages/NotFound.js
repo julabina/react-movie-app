@@ -4,6 +4,10 @@ const NotFound = () => {
     console.log('404');
     return (
         <div>
+            <br />
+            <br />
+            <br />
+            <br />
             <h1>404 NOTFOUND</h1>
             <button>BACK TO HOME</button>
         </div>

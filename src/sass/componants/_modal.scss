@@ -1,0 +1,28 @@
+.modalOverviewOverlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.774);
+    &_modal {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        width: 800px;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        background: #f2f2f2;
+        &_cont {
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    }
+    &--hidden {
+        display: none;
+    }
+}

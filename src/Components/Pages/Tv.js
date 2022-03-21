@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import TvNavBar from '../AppComponents/TvNavBar';
+import TvSeason from '../AppComponents/TvSeason';
 
 const Tv = () => {
 
     const params = useParams();
 
     const [datasTvShow, setDatasTvShow] = useState([]);
+    const [seasonDatas, setSeasonDatas] = useState([]);
     const [tvBDrop, setTvBDrop] = useState();
 
     useEffect(() => {
@@ -17,6 +20,9 @@ const Tv = () => {
             let tvGenres = [];
             let creators = [];
             let originCountry = [];
+            let seas = [];
+            let seasonItem;
+            let count = 0;
             for (let i = 0; i < datas.genres.length;i++) {
                 tvGenres.push(datas.genres[i].name + " ");
             }
@@ -29,6 +35,21 @@ const Tv = () => {
             for (let i = 0; i < datas.origin_country.length;i++) {
                 (i === 0) ? originCountry.push(datas.origin_country[i]) : originCountry.push(', ' + datas.origin_country[i]);     
             }
+            for (let i = 0; i < datas.seasons.length;i++) {
+                if (datas.seasons[i].name !== "Épisodes spéciaux") {
+                    count++;
+                    seasonItem = {
+                        serieId : datas.id,
+                        id : uuidv4(),
+                        name: datas.seasons[i].name,
+                        airDate : datas.seasons[i].air_date,
+                        overview: datas.seasons[i].overview,
+                        poster: "https://image.tmdb.org/t/p/w200" + datas.seasons[i].poster_path,
+                        season : count
+                    };
+                    seas.push(seasonItem);
+                }
+            }
             let item = {
                 title : datas.name,
                 createdBy : creators,
@@ -40,9 +61,10 @@ const Tv = () => {
                 status : datas.status,
                 overview : datas.overview,
                 poster: "https://image.tmdb.org/t/p/w300" + datas.poster_path,
-                seasons : datas.seasons,
                 vote: datas.vote_average
             }
+            console.log(seas);
+            setSeasonDatas(seas);
             setTvBDrop("https://image.tmdb.org/t/p/original" + datas.backdrop_path);
             setDatasTvShow(item);
         })
@@ -73,6 +95,22 @@ const Tv = () => {
                     </div>
                 </div>
             </div>
+            <div className="tvInfosContainer">
+                <div className="tvInfosContainer_release">
+                    <p>1ere diffusion : <span>{datasTvShow.firstDiff}</span></p>
+                </div>
+                <div className="tvInfosContainer_overview">
+                    <div className="tvInfosContainer_overview_header"><p className='tvInfosContainer_overview_header_title'>Synopsis</p></div>
+                    <p className='tvInfosContainer_overview_txt'>{datasTvShow.overview}</p>
+                </div>
+            </div>
+            <ul>
+                {seasonDatas.map((el) => {
+                    return (
+                     <TvSeason name={el.name} id={el.id} key={el.id} serieId={el.serieId} diff={el.airDiff} overview={el.overview} poster={el.poster} season={el.season} />
+                    )
+                })}
+            </ul>
         </main>
     );
 };

@@ -152,6 +152,51 @@ body {
   background: salmon;
 }
 
+.tvSeasonCard_title {
+  height: 30px;
+  border: 1px solid black;
+  font-size: 600;
+  padding: 5px 0 0 10px;
+}
+.tvSeasonCard_main {
+  display: flex;
+  height: 289px;
+}
+.tvSeasonCard_main img {
+  object-fit: cover;
+}
+.tvSeasonCard_main_infos {
+  padding: 20px;
+  overflow: scroll;
+}
+
+.modalOverviewOverlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.774);
+}
+.modalOverviewOverlay_modal {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 800px;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+}
+.modalOverviewOverlay_modal_cont h1 {
+  font-size: 1.5em;
+}
+.modalOverviewOverlay--hidden {
+  display: none;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -339,6 +384,46 @@ main {
 }
 .tvBackdrop_container_poster img {
   max-height: 450px;
+}
+
+.tvInfosContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.tvInfosContainer_release {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 100px;
+  border-radius: 5px;
+  margin-top: 190px;
+  background: #d8d5d5;
+  margin-bottom: 40px;
+}
+.tvInfosContainer_overview {
+  width: 760px;
+  margin: 40px 0 40px 40px;
+  line-height: 1.4;
+  letter-spacing: 0.8px;
+  border-radius: 5px;
+  background: #d8d5d5;
+  overflow: hidden;
+  height: auto;
+}
+.tvInfosContainer_overview_header {
+  padding: 15px 40px;
+  background: #ebebeb;
+}
+.tvInfosContainer_overview_header_title {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.tvInfosContainer_overview_txt {
+  padding: 20px 40px;
+  text-indent: 30px;
 }
 
 .tvList {

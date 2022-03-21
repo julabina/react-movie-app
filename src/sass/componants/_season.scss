@@ -1,0 +1,19 @@
+.tvSeasonCard {
+    &_title {
+        height: 30px;
+        border: 1px solid black;
+        font-size: 600;
+        padding: 5px  0 0 10px;
+    }
+    &_main {
+        display: flex; 
+        height: 289px;
+        img {
+            object-fit: cover;
+        }
+        &_infos {
+            padding: 20px;
+            overflow: scroll;
+        }
+    }
+}
