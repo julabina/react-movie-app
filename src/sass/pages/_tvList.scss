@@ -8,4 +8,11 @@
         margin-top: 40px;
         width: 500px;
     }
+    &_pagesBtn {
+        &_btn{
+            &--active {
+                color: red;
+            }
+        }
+    }
 }

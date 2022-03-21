@@ -6,7 +6,7 @@ import MovieNavBar from '../AppComponents/MovieNavBar';
 const MovieList = () => {
 
     const [dataMovieList, setDataMovieList] = useState([]);
-    const [movieListOption, setMovieListOption] = useState(["popularity", "desc", 1]);
+    const [movieListOption, setMovieListOption] = useState(["release_date", "desc", 1]);
     
     useEffect(() => {
         fetch('https://api.themoviedb.org/3/discover/movie?api_key=' + process.env.REACT_APP_API_KEY +'&language=fr-FR&sort_by=' + movieListOption[0] + '.' + movieListOption[1] + '&include_adult=false&include_video=false&page=' + movieListOption[2] + '&vote_count.gte=400')
@@ -62,18 +62,18 @@ const MovieList = () => {
     return (
         <>
         <main className='movieList'> 
-        <MovieNavBar />
-        <div className="movieList_options">
-            <select name="sortBy" onChange={(e) => sortList(e.target.value)}>
-                <option defaultChecked value="popularity">Popularité</option>
-                <option value="release_date">Date de sortie</option>
-                <option value="vote_average">Note</option>
-            </select>
-            <select name="byPage" onChange={(e) => sortReverse(e.target.value)}>
-                <option defaultChecked value="desc">↓</option>
-                <option value="asc">↑</option>
-            </select>
-        </div>
+            <MovieNavBar />
+                <div className="movieList_options">
+                    <select defaultValue="release_date" name="sortBy" onChange={(e) => sortList(e.target.value)}>
+                        <option value="popularity">Popularité</option>
+                        <option value="release_date">Date de sortie</option>
+                        <option value="vote_average">Note</option>
+                    </select>
+                    <select defaultValue="desc"  name="byPage" onChange={(e) => sortReverse(e.target.value)}>
+                        <option value="desc">↓</option>
+                        <option value="asc">↑</option>
+                    </select> 
+                </div>
               <ul>
               {dataMovieList.map((el) => {
                   return (
