@@ -14,10 +14,11 @@ import TvPopular from "./Components/Pages/TvPopular";
 import MovieHome from "./Components/Pages/MovieHome";
 import TvHome from "./Components/Pages/TvHome";
 import TvSeason from "./Components/AppComponents/TvSeason";
+import Footer from "./Components/Layout/Footer";
 
 function App() {
   return (
-    <div className="app">
+    <>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -34,7 +35,8 @@ function App() {
         <Route path="/tv/ref_=:id/s:sa" element={<TvSeason />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-    </div>
+      <Footer />
+    </>
   );
 }
 

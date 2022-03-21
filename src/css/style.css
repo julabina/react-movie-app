@@ -161,13 +161,39 @@ body {
 .tvSeasonCard_main {
   display: flex;
   height: 289px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
 }
 .tvSeasonCard_main img {
   object-fit: cover;
 }
-.tvSeasonCard_main_infos {
+.tvSeasonCard_main_cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.tvSeasonCard_main_cont_infos {
   padding: 20px;
   overflow: scroll;
+}
+.tvSeasonCard_main_cont_episodeShow {
+  display: flex;
+  justify-content: center;
+  height: 20px;
+  width: 100%;
+  border-top: 1px solid black;
+  cursor: pointer;
+  user-select: none;
+}
+
+.test {
+  text-align: center;
+  background: blue;
+}
+
+.testHidden {
+  visibility: hidden;
 }
 
 .modalOverviewOverlay {
@@ -189,9 +215,14 @@ body {
   justify-content: center;
   align-items: center;
   background: #f2f2f2;
+  border-radius: 10px;
+}
+.modalOverviewOverlay_modal_cont {
+  padding: 20px 30px;
 }
 .modalOverviewOverlay_modal_cont h1 {
   font-size: 1.5em;
+  margin-bottom: 15px;
 }
 .modalOverviewOverlay--hidden {
   display: none;
@@ -218,6 +249,17 @@ header {
 }
 
 main {
+  margin-top: 40px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: maroon;
+  height: 150px;
+  width: 100%;
   margin-top: 40px;
 }
 

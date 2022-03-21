@@ -8,12 +8,38 @@
     &_main {
         display: flex; 
         height: 289px;
+        border-bottom: 1px solid black;
+        border-right: 1px solid black;
         img {
             object-fit: cover;
         }
-        &_infos {
-            padding: 20px;
-            overflow: scroll;
+        &_cont {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            &_infos {
+                padding: 20px;
+                overflow: scroll;
+            }
+            &_episodeShow {
+                display: flex;
+                justify-content: center;
+                height: 20px;
+                width: 100%;
+                border-top: 1px solid black;
+                cursor: pointer;
+                user-select: none;
+            }
         }
     }
+}
+
+.test {
+    text-align: center;
+    background: blue;
+}
+
+.testHidden {
+    visibility: hidden;
 }
