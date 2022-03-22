@@ -1,7 +1,9 @@
 import React from 'react'; 
+import ModalAbout from '../AppComponents/ModalAbout';
 import NavBar from '../AppComponents/NavBar';
 
-const Header = (props) => {
+const Header = () => {
+
     return (
         <header>
             <NavBar />
@@ -12,9 +14,8 @@ const Header = (props) => {
                     <div className="btnDarkMod">BTN</div>
                 </div>
                 <p> - </p>
-                <p>IMG</p>             
             </div>
-        </header>
+        </header>                    
     );
 };
 

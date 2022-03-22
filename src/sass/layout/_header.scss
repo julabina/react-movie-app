@@ -12,7 +12,23 @@ header {
 
 .headerOption {
     display: flex;
+    margin: 10px 35px 0 0;
     &_darkmod {
         display: flex;
+    }
+    &_svgCont {
+        position: fixed;
+        top: 6px;right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;height: 25px;
+        border: 1px solid black;
+        border-radius: 50%;
+        cursor: pointer;
+        &_svg {
+            height: 15px;
+            margin-bottom: 2px;
+        }
     }
 }

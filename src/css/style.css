@@ -232,6 +232,31 @@ body {
   display: none;
 }
 
+.modalAbout_overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.774);
+}
+.modalAbout_cont {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 400px;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  background: #f2f2f2;
+  border-radius: 10px;
+}
+.modalAbout_cont_modal {
+  padding: 20px 30px;
+}
+
 .episodesCont {
   display: flex;
   align-items: center;
@@ -318,9 +343,27 @@ header {
 
 .headerOption {
   display: flex;
+  margin: 10px 35px 0 0;
 }
 .headerOption_darkmod {
   display: flex;
+}
+.headerOption_svgCont {
+  position: fixed;
+  top: 6px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.headerOption_svgCont_svg {
+  height: 15px;
+  margin-bottom: 2px;
 }
 
 main {

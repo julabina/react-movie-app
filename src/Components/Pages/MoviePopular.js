@@ -38,7 +38,7 @@ const MoviePopular = () => {
     return (
         <main className='movieList'> 
             <MovieNavBar />
-            *<div className="movieList_options"></div>
+            <div className="movieList_options"></div>
             <ul>
               {dataMoviePopular.map((el) => {
                   return (
