@@ -1,5 +1,25 @@
 .episodesCont {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    &_number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;width: 50px;
+        border-right: 1px solid black;
+    }
+    &_title {
+        width: 400px;
+    }
+    &_vote {
+        width: 100px;
+        text-align: right;
+    }
 }
 
 .modalEpisode{
@@ -37,6 +57,11 @@
             &_closeBtn {
                 position: absolute;
                 right: 20px;
+            }
+            &_infos {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 15px;
             }
         }
     }

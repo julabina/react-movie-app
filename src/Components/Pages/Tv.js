@@ -102,7 +102,7 @@ const Tv = () => {
                     <p className='tvInfosContainer_overview_txt'>{datasTvShow.overview}</p>
                 </div>
             </div>
-            <ul>
+            <ul className='seasonList'>
                 {seasonDatas.map((el) => {
                     return (
                      <TvSeason name={el.name} id={el.id} key={el.id} serieId={el.serieId} diff={el.airDiff} overview={el.overview} poster={el.poster} season={el.season} />

@@ -23,10 +23,10 @@ const TvEpisode = (props) => {
     return (
         <li>
             <div className="episodesCont">
-                <div className=""><p>{props.episodeNumber}</p></div>
-                <p>{episodeDatas.title}</p>
+                <div className="episodesCont_number"><p>{props.episodeNumber}</p></div>
+                <p className='episodesCont_title'>{episodeDatas.title}</p>
                 <EpisodeModal title={episodeDatas.title} overview={episodeDatas.overview} vote={episodeDatas.vote} background={episodeDatas.background} airDate={episodeDatas.airDate} episodeNumber={props.episodeNumber} />
-                <p>{episodeDatas.vote}</p>
+                <p className='episodesCont_vote'>{episodeDatas.vote}</p>
             </div>
         </li>
     );
