@@ -33,13 +33,9 @@
             }
         }
     }
-}
-
-.test {
-    text-align: center;
-    background: blue;
-}
-
-.testHidden {
-    visibility: hidden;
+    &_episodes {
+        &--hidden {
+            display: none;
+        }
+    }
 }

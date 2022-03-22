@@ -1,0 +1,43 @@
+.episodesCont {
+    display: flex;
+}
+
+.modalEpisode{
+    &_overlay {
+        position: fixed;
+        top: 0;bottom: 0;left: 0;right: 0;
+        background: rgba(0, 0, 0, 0.767);
+        &--hidden {
+            display: none;
+        }
+    }
+    &_cont {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        width: 540px;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        background: #f2f2f2;
+        border-radius: 10px;
+        &_modal {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px;
+            img {
+                border-radius: 8px 8px 0 0;
+            }
+            h1 {
+                margin: 15px 0 20px 0;
+            }
+          /*   &_overview {} */
+            &_closeBtn {
+                position: absolute;
+                right: 20px;
+            }
+        }
+    }
+}

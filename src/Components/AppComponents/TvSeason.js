@@ -1,17 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import SeasonModalOverview from './SeasonModalOverview';
+import TvEpisode from './TvEpisode';
+import { v4 as uuidv4 } from 'uuid';
 
 const TvSeason = (props) => {
 
-    const [testt, setTestt] = useState();
+    const [dataEpisode, setDataEpisode] = useState([]);
     const [toggleEpisodeShow, setToggleEpisodeShow] = useState(false);
 
     useEffect (() => {
     fetch('https://api.themoviedb.org/3/tv/' + props.serieId + '/season/' + props.season + '?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR')
     .then(res => res.json())
     .then(datas => {
-        console.log(datas);
-        setTestt(datas.overview)
+        let item ;
+        let arr = [];
+        for (let i = 0; i < datas.episodes.length;i++) {
+            item = {
+                serieId : props.serieId,
+                season : props.season,
+                episodeNumber : datas.episodes[i].episode_number,
+                id : uuidv4()
+            }
+            arr.push(item);
+        }
+        setDataEpisode(arr);
     })
 },[])
 
@@ -35,16 +47,13 @@ const toggleEpisodeHide = () => {
                     </div>
                 </div>
             </div>
-                    <div className={toggleEpisodeShow ? "test" : "test testHidden"}>
-                        <p>test</p>
-                        <p>test</p>
-                        <p>test</p>
-                        <p>test</p>
-                        <p>test</p>
-                        <p>test</p>
-                        <p>test</p>
-                        <p>test</p>
-                    </div>
+            <ul className={toggleEpisodeShow ? "tvSeasonCard_episodes" : "tvSeasonCard_episodes tvSeasonCard_episodes--hidden"}>
+                {dataEpisode.map((el) => {
+                    return (
+                        <TvEpisode key={el.id} id={el.id} serieId={el.serieId} season={el.season} episodeNumber={el.episodeNumber} />
+                        )
+                })}   
+            </ul>
         </li>
     );
 };

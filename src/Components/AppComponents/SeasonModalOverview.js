@@ -11,7 +11,7 @@ const SeasonModalOverview = (props) => {
     return (
         <>
         <div>
-            <button onClick={toggleModal}>Lire synopsis</button>
+            <button onClick={toggleModal}>Lire le synopsis</button>
         </div>
         <div className={overviewToggle ? "modalOverviewOverlay" : "modalOverviewOverlay modalOverviewOverlay--hidden"} >
             <div className="modalOverviewOverlay_modal">

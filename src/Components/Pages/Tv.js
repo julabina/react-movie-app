@@ -16,7 +16,6 @@ const Tv = () => {
         fetch('https://api.themoviedb.org/3/tv/' + params.id + '?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR')
         .then(res => res.json())
         .then(datas => {
-            console.log(datas);
             let tvGenres = [];
             let creators = [];
             let originCountry = [];
@@ -63,7 +62,6 @@ const Tv = () => {
                 poster: "https://image.tmdb.org/t/p/w300" + datas.poster_path,
                 vote: datas.vote_average
             }
-            console.log(seas);
             setSeasonDatas(seas);
             setTvBDrop("https://image.tmdb.org/t/p/original" + datas.backdrop_path);
             setDatasTvShow(item);
