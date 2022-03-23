@@ -7,6 +7,7 @@ const MoviePopular = () => {
 
     const [dataMoviePopular, setDataMoviePopular] = useState([]);
     const [changePagePopular, setChangePagePopular] = useState(1);
+    const [totalPages, setTotalPages] = useState();
 
     useEffect(() => {
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&page=' + changePagePopular)
@@ -25,6 +26,7 @@ const MoviePopular = () => {
                 };
                 arr.push(item);
             }
+            setTotalPages(datas.total_pages);
             setDataMoviePopular(arr);
         })
     },[changePagePopular])
@@ -47,12 +49,12 @@ const MoviePopular = () => {
                       )
                     })}      
             </ul>
-            <div className="moviePopular_pagesBtn">
-                {(changePagePopular !== 1) && <button onClick={() => changePage(-1)} className='movieList_pagesBtn_btn'>{changePagePopular - 1}</button>}
-                <button className='movieList_pagesBtn_btn movieList_pagesBtn_btn--active'>{changePagePopular}</button>
-                <button onClick={() => changePage(1)} className='movieList_pagesBtn_btn'>{changePagePopular + 1}</button>
-                <button onClick={() => changePage(2)} className='movieList_pagesBtn_btn'>{changePagePopular + 2}</button>
-                <button onClick={() => changePage(3)} className='movieList_pagesBtn_btn'>{changePagePopular + 3}</button>
+            <div className="movieList_pagesBtn">
+                    {(changePagePopular !== 1) && <button onClick={() => changePage(-1)} className='movieList_pagesBtn_btn'>{changePagePopular - 1}</button>}
+                    <button className='movieList_pagesBtn_btn movieList_pagesBtn_btn--active'>{changePagePopular}</button>             
+                    {(changePagePopular <  totalPages) && <button onClick={() => changePage(1)} className='movieList_pagesBtn_btn'>{changePagePopular + 1}</button>}
+                    {(changePagePopular < (totalPages - 1) ) && <button onClick={() => changePage(2)} className='movieList_pagesBtn_btn'>{changePagePopular + 2}</button>}
+                    {(changePagePopular < (totalPages - 2) ) && <button onClick={() => changePage(3)} className='movieList_pagesBtn_btn'>{changePagePopular + 3}</button>}            
             </div>
         </main>
     );

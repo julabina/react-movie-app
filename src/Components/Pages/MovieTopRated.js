@@ -7,6 +7,7 @@ const MovieTopRated = () => {
 
     const [dataMovieTopRated, setDataMovieTopRated] = useState([]);
     const [changePageTopRated, setChangePageTopRated] = useState(1);
+    const [totalPages, setTotalPages] = useState();
 
     useEffect(() => {
         fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=' + process.env.REACT_APP_API_KEY + '&page=' + changePageTopRated + '&language=fr-FR')
@@ -25,6 +26,7 @@ const MovieTopRated = () => {
                 };
                 arr.push(item);
             }
+            setTotalPages(datas.total_pages);
             setDataMovieTopRated(arr);
         })
     },[changePageTopRated])
@@ -49,11 +51,11 @@ const MovieTopRated = () => {
                 </ul>
                 <div className="movieList_pagesBtn">
                     {(changePageTopRated !== 1) && <button onClick={() => changePage(-1)} className='movieList_pagesBtn_btn'>{changePageTopRated - 1}</button>}
-                    <button className='movieList_pagesBtn_btn movieList_pagesBtn_btn--active'>{changePageTopRated}</button>
-                    <button onClick={() => changePage(1)} className='movieList_pagesBtn_btn'>{changePageTopRated + 1}</button>
-                    <button onClick={() => changePage(2)} className='movieList_pagesBtn_btn'>{changePageTopRated + 2}</button>
-                    <button onClick={() => changePage(3)} className='movieList_pagesBtn_btn'>{changePageTopRated + 3}</button>
-                </div>
+                    <button className='movieList_pagesBtn_btn movieList_pagesBtn_btn--active'>{changePageTopRated}</button>             
+                    {(changePageTopRated <  totalPages) && <button onClick={() => changePage(1)} className='movieList_pagesBtn_btn'>{changePageTopRated + 1}</button>}
+                    {(changePageTopRated < (totalPages - 1) ) && <button onClick={() => changePage(2)} className='movieList_pagesBtn_btn'>{changePageTopRated + 2}</button>}
+                    {(changePageTopRated < (totalPages - 2) ) && <button onClick={() => changePage(3)} className='movieList_pagesBtn_btn'>{changePageTopRated + 3}</button>}            
+            </div>
         </main>
     );
 };

@@ -9,9 +9,20 @@
         width: 500px;
     }
     &_pagesBtn {
+        margin-top: 30px;
         &_btn{
+            height: 40px;
+            width: 40px;
+            border: none;
+            background: none;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            cursor: pointer;
             &--active {
-                color: red;
+                color: map-get($map: $colors, $key: primary);
+                font-weight: 700;
+                font-size: 1.1em;
+                padding-bottom: 4px;
             }
         }
     }

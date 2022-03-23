@@ -470,8 +470,23 @@ footer {
   margin-top: 40px;
   width: 500px;
 }
+.movieList_pagesBtn {
+  margin-top: 30px;
+}
+.movieList_pagesBtn_btn {
+  height: 40px;
+  width: 40px;
+  border: none;
+  background: none;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
 .movieList_pagesBtn_btn--active {
-  color: red;
+  color: #D8464B;
+  font-weight: 700;
+  font-size: 1.1em;
+  padding-bottom: 4px;
 }
 
 .movieHome {
@@ -572,6 +587,7 @@ footer {
 }
 .movieBackdrop_container_poster img {
   max-height: 450px;
+  user-select: none;
 }
 
 .movieInfosContainer {
@@ -667,6 +683,7 @@ footer {
 }
 .tvBackdrop_container_poster img {
   max-height: 450px;
+  user-select: none;
 }
 
 .tvInfosContainer {
@@ -769,8 +786,23 @@ footer {
   margin-top: 40px;
   width: 500px;
 }
+.tvList_pagesBtn {
+  margin-top: 30px;
+}
+.tvList_pagesBtn_btn {
+  height: 40px;
+  width: 40px;
+  border: none;
+  background: none;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
 .tvList_pagesBtn_btn--active {
-  color: red;
+  color: #D8464B;
+  font-weight: 700;
+  font-size: 1.1em;
+  padding-bottom: 4px;
 }
 
 /*# sourceMappingURL=style.css.map */

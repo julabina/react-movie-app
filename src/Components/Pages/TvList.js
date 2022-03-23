@@ -7,6 +7,7 @@ const TvList = () => {
 
     const [tvDatasList, setTvDatasList] = useState([]);
     const [tvListOption, setTvListOption] = useState(["release_date", "desc", 1]);
+    const [totalPages, setTotalPages] = useState();
 
     useEffect(() => {
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&without_genres=16&sort_by=' + tvListOption[0] + '.' + tvListOption[1] + '&page=' + tvListOption[2] + '&vote_count.gte=1000&include_null_first_air_dates=false')
@@ -24,6 +25,7 @@ const TvList = () => {
                 };
                 arr.push(item)
             }
+            setTotalPages(datas.total_pages);
             setTvDatasList(arr);
         })
     },[tvListOption])
@@ -79,10 +81,10 @@ const TvList = () => {
             </ul>
             <div className="tvList_pagesBtn">
                 {(tvListOption[2] !== 1) && <button onClick={() => changePage(-1)} className='tvList_pagesBtn_btn'>{tvListOption[2] - 1}</button>}
-                <button className='tvList_pagesBtn_btn tvList_pagesBtn_btn--active'>{tvListOption[2]}</button>
-                <button onClick={() => changePage(1)} className='tvList_pagesBtn_btn'>{tvListOption[2] + 1}</button>
-                <button onClick={() => changePage(2)} className='tvList_pagesBtn_btn'>{tvListOption[2] + 2}</button>
-                <button onClick={() => changePage(3)} className='tvList_pagesBtn_btn'>{tvListOption[2] + 3}</button>
+                <button className='tvList_pagesBtn_btn tvList_pagesBtn_btn--active'>{tvListOption[2]}</button>             
+                {(tvListOption[2] <  totalPages) && <button onClick={() => changePage(1)} className='tvList_pagesBtn_btn'>{tvListOption[2] + 1}</button>}
+                {(tvListOption[2] < (totalPages - 1) ) && <button onClick={() => changePage(2)} className='tvList_pagesBtn_btn'>{tvListOption[2] + 2}</button>}
+                {(tvListOption[2] < (totalPages - 2) ) && <button onClick={() => changePage(3)} className='tvList_pagesBtn_btn'>{tvListOption[2] + 3}</button>}            
             </div>
         </main>
     );

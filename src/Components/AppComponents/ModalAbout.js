@@ -17,10 +17,10 @@ const ModalAbout = () => {
         <div className='modalAbout_overlay'>
             <div className="modalAbout_cont">
                 <div className="modalAbout_cont_modal">
-                    <button onClick={openModal}>X</button>
                     <h1>A PROPOS</h1>
                     <p>TEXT 1</p>
                     <p>TEXT 2</p>
+                    <button onClick={openModal}>OK</button>
                 </div>
             </div>
         </div>

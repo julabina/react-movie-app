@@ -7,6 +7,7 @@ const MovieList = () => {
 
     const [dataMovieList, setDataMovieList] = useState([]);
     const [movieListOption, setMovieListOption] = useState(["release_date", "desc", 1]);
+    const [totalPages, setTotalPages] = useState();
     
     useEffect(() => {
         fetch('https://api.themoviedb.org/3/discover/movie?api_key=' + process.env.REACT_APP_API_KEY +'&language=fr-FR&sort_by=' + movieListOption[0] + '.' + movieListOption[1] + '&include_adult=false&include_video=false&page=' + movieListOption[2] + '&vote_count.gte=400')
@@ -25,6 +26,7 @@ const MovieList = () => {
                 };
                 arr.push(item);
             }
+            setTotalPages(datas.total_pages);
             setDataMovieList(arr);
         })
     },[movieListOption])
@@ -83,11 +85,11 @@ const MovieList = () => {
                     })}      
             </ul>
             <div className="movieList_pagesBtn">
-                {(movieListOption[2] !== 1) && <button onClick={() => changePage(-1)} className='movieList_pagesBtn_btn'>{movieListOption[2] - 1}</button>}
-                <button className='movieList_pagesBtn_btn movieList_pagesBtn_btn--active'>{movieListOption[2]}</button>
-                <button onClick={() => changePage(1)} className='movieList_pagesBtn_btn'>{movieListOption[2] + 1}</button>
-                <button onClick={() => changePage(2)} className='movieList_pagesBtn_btn'>{movieListOption[2] + 2}</button>
-                <button onClick={() => changePage(3)} className='movieList_pagesBtn_btn'>{movieListOption[2] + 3}</button>
+                    {(movieListOption[2] !== 1) && <button onClick={() => changePage(-1)} className='movieList_pagesBtn_btn'>{movieListOption[2] - 1}</button>}
+                    <button className='movieList_pagesBtn_btn movieList_pagesBtn_btn--active'>{movieListOption[2]}</button>             
+                    {(movieListOption[2] <  totalPages) && <button onClick={() => changePage(1)} className='movieList_pagesBtn_btn'>{movieListOption[2] + 1}</button>}
+                    {(movieListOption[2] < (totalPages - 1) ) && <button onClick={() => changePage(2)} className='movieList_pagesBtn_btn'>{movieListOption[2] + 2}</button>}
+                    {(movieListOption[2] < (totalPages - 2) ) && <button onClick={() => changePage(3)} className='movieList_pagesBtn_btn'>{movieListOption[2] + 3}</button>}            
             </div>
         </main>
         </>

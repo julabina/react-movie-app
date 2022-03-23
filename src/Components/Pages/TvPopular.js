@@ -7,6 +7,7 @@ const TvPopular = () => {
 
     const [dataTvPopular, setDataTvPopular] = useState([]);
     const [changePagePopular, setChangePagePopular] = useState(1);
+    const [totalPages, setTotalPages] = useState();
 
     useEffect(() => {
         fetch('https://api.themoviedb.org/3/tv/popular?api_key=' + process.env.REACT_APP_API_KEY + '&page=' + changePagePopular + '&language=fr-FR')
@@ -24,6 +25,7 @@ const TvPopular = () => {
                 };
                 arr.push(item);
             }
+            setTotalPages(datas.total_pages);
             setDataTvPopular(arr);
         })
     },[changePagePopular])
@@ -44,13 +46,13 @@ const TvPopular = () => {
                         )
                         })}      
                 </ul>
-                <div className="TvList_pagesBtn">
+                <div className="tvList_pagesBtn">
                     {(changePagePopular !== 1) && <button onClick={() => changePage(-1)} className='tvList_pagesBtn_btn'>{changePagePopular - 1}</button>}
-                    <button className='tvList_pagesBtn_btn tvList_pagesBtn_btn--active'>{changePagePopular}</button>
-                    <button onClick={() => changePage(1)} className='tvList_pagesBtn_btn'>{changePagePopular + 1}</button>
-                    <button onClick={() => changePage(2)} className='tvList_pagesBtn_btn'>{changePagePopular + 2}</button>
-                    <button onClick={() => changePage(3)} className='tvList_pagesBtn_btn'>{changePagePopular + 3}</button>
-                </div>
+                    <button className='tvList_pagesBtn_btn tvList_pagesBtn_btn--active'>{changePagePopular}</button>             
+                    {(changePagePopular <  totalPages) && <button onClick={() => changePage(1)} className='tvList_pagesBtn_btn'>{changePagePopular + 1}</button>}
+                    {(changePagePopular < (totalPages - 1) ) && <button onClick={() => changePage(2)} className='tvList_pagesBtn_btn'>{changePagePopular + 2}</button>}
+                    {(changePagePopular < (totalPages - 2) ) && <button onClick={() => changePage(3)} className='tvList_pagesBtn_btn'>{changePagePopular + 3}</button>}            
+            </div>
         </main>
     );
 };
