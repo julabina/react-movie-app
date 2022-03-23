@@ -1,23 +1,36 @@
 .tvCard {
     display: flex;
-    width: 500px;
+    width: 800px;
     height: 300px;
     border: 1px solid black;
     margin-top: 20px;
+    box-sizing: content-box;
+    border-radius: 3px;
     &_poster {
         display: flex;
         justify-content: center;
         align-items: center;
         background: #333;
+        min-width: 200px;
+        max-width: 200px;
+        &_noImg p {
+            display: flex;
+            justify-content: center;
+            width: 200px;height: auto;
+            color: white;
+        }
     }
     &_infos {
         padding: 15px;
+        width: 100%;
         h2 {
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 30px;
         }
         p {
             height: 80%;
+            line-height: 1.4;
+            text-indent: 30px;
             overflow: scroll;
         }
     }
