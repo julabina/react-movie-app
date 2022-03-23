@@ -88,7 +88,7 @@ body {
   justify-content: center;
   width: 200px;
   height: auto;
-  color: white;
+  color: #f3f3f3;
 }
 .movieCard_infos {
   padding: 15px;
@@ -131,7 +131,7 @@ body {
   justify-content: center;
   width: 200px;
   height: auto;
-  color: white;
+  color: #f3f3f3;
 }
 .tvCard_infos {
   padding: 15px;
@@ -149,8 +149,9 @@ body {
 }
 
 .active {
-  color: #235789;
-  background: #C1292E;
+  color: #D8464B;
+  font-weight: 600;
+  background: #003166;
 }
 
 .mainNavBar {
@@ -184,7 +185,7 @@ body {
   right: 0;
   height: 30px;
   border-bottom: 1px solid black;
-  background: #C1292E;
+  background: #003166;
   padding-left: 15px;
   color: #f3f3f3;
 }
@@ -192,18 +193,27 @@ body {
 .tvSeasonCard {
   margin-bottom: 30px;
   width: 1100px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.103);
 }
 .tvSeasonCard_title {
+  display: flex;
+  align-items: center;
+  border-radius: 7px 7px 0 0;
   height: 30px;
-  border: 1px solid black;
-  font-size: 600;
-  padding: 5px 0 0 10px;
+  border: 1px solid #3337;
+  font-weight: 600;
+  background: #D8464B;
+  height: 55px;
+  font-size: 1.1em;
+  padding: 15px 40px;
 }
 .tvSeasonCard_main {
+  box-sizing: content-box;
   display: flex;
   height: 289px;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
+  border-bottom: 1px solid #3337;
+  border-right: 1px solid #3337;
+  border-left: 1px solid #3337;
 }
 .tvSeasonCard_main img {
   object-fit: cover;
@@ -223,7 +233,9 @@ body {
   justify-content: center;
   height: 20px;
   width: 100%;
-  border-top: 1px solid black;
+  background: #003166;
+  color: #f3f3f3;
+  border-top: 1px solid #3337;
   cursor: pointer;
   user-select: none;
 }
@@ -298,27 +310,44 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: content-box;
   height: 30px;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-bottom: 1px solid #3333;
+  border-left: 1px solid #3333;
+  border-right: 1px solid #3333;
 }
-.episodesCont_number {
+.episodesCont_cont {
+  display: flex;
+}
+.episodesCont_cont_number {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 30px;
   width: 50px;
-  border-right: 1px solid black;
+  border-right: 1px solid #3333;
+  background: #D8464B;
+  margin-right: 20px;
 }
-.episodesCont_title {
-  width: 400px;
+.episodesCont_cont_title {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  overflow: hidden;
 }
 .episodesCont_vote {
   width: 100px;
+  font-size: 1.1em;
+  font-weight: 600;
   text-align: right;
+  margin-right: 10px;
 }
 
+.modalEpisode_toggleBtn {
+  background: initial;
+  border: 4px solid rgba(128, 128, 128, 0.205);
+  cursor: pointer;
+}
 .modalEpisode_overlay {
   position: fixed;
   top: 0;
@@ -347,7 +376,6 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px 30px;
-  /*   &_overview {} */
 }
 .modalEpisode_cont_modal img {
   border-radius: 8px 8px 0 0;
@@ -357,7 +385,11 @@ body {
 }
 .modalEpisode_cont_modal_closeBtn {
   position: absolute;
-  right: 20px;
+  border: 1px solid #333;
+  top: 25px;
+  right: 25px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 .modalEpisode_cont_modal_infos {
   display: flex;
@@ -372,7 +404,7 @@ header {
   left: 0;
   display: flex;
   justify-content: space-between;
-  background: #ebebeb;
+  background: #D8464B;
   height: 40px;
   text-align: center;
   padding: 0 10px;
@@ -486,7 +518,7 @@ footer {
   border-bottom: 1px solid black;
   border-left: 1px solid salmon;
   cursor: pointer;
-  background: salmon;
+  background: #D8464B;
 }
 
 .movieBackdrop {
@@ -536,6 +568,7 @@ footer {
 .movieBackdrop_container_poster {
   height: 450px;
   width: 300px;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.267);
 }
 .movieBackdrop_container_poster img {
   max-height: 450px;
@@ -555,8 +588,9 @@ footer {
   height: 100px;
   border-radius: 5px;
   margin-top: 190px;
-  background: #d8d5d5;
+  background: #EBEBEB;
   margin-bottom: 40px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.163);
 }
 .movieInfosContainer_overview {
   width: 760px;
@@ -564,13 +598,14 @@ footer {
   line-height: 1.4;
   letter-spacing: 0.8px;
   border-radius: 5px;
-  background: #d8d5d5;
+  background: #EBEBEB;
   overflow: hidden;
   height: auto;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.163);
 }
 .movieInfosContainer_overview_header {
   padding: 15px 40px;
-  background: #ebebeb;
+  background: #D8464B;
 }
 .movieInfosContainer_overview_header_title {
   font-size: 1.1em;
@@ -628,6 +663,7 @@ footer {
 .tvBackdrop_container_poster {
   height: 450px;
   width: 300px;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.267);
 }
 .tvBackdrop_container_poster img {
   max-height: 450px;
@@ -647,8 +683,9 @@ footer {
   height: 100px;
   border-radius: 5px;
   margin-top: 190px;
-  background: #d8d5d5;
+  background: #EBEBEB;
   margin-bottom: 40px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.163);
 }
 .tvInfosContainer_overview {
   width: 760px;
@@ -656,13 +693,14 @@ footer {
   line-height: 1.4;
   letter-spacing: 0.8px;
   border-radius: 5px;
-  background: #d8d5d5;
+  background: #EBEBEB;
   overflow: hidden;
   height: auto;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.164);
 }
 .tvInfosContainer_overview_header {
   padding: 15px 40px;
-  background: #ebebeb;
+  background: #D8464B;
 }
 .tvInfosContainer_overview_header_title {
   font-size: 1.1em;
@@ -717,7 +755,7 @@ footer {
   border-bottom: 1px solid black;
   border-left: 1px solid salmon;
   cursor: pointer;
-  background: salmon;
+  background: #D8464B;
 }
 
 .tvList {

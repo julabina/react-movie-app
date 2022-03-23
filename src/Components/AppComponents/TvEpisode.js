@@ -13,7 +13,7 @@ const TvEpisode = (props) => {
                airDate : datas.air_date,
                title : datas.name,
                overview : datas.overview,
-               vote : datas.vote_average,
+               vote : Math.round(datas.vote_average * 10)/10,
                background : "https://image.tmdb.org/t/p/w500" + datas.still_path
            }
            setEpisodeDatas(item);
@@ -23,8 +23,10 @@ const TvEpisode = (props) => {
     return (
         <li>
             <div className="episodesCont">
-                <div className="episodesCont_number"><p>{props.episodeNumber}</p></div>
-                <p className='episodesCont_title'>{episodeDatas.title}</p>
+                <div className="episodesCont_cont">
+                    <div className="episodesCont_cont_number"><p>{props.episodeNumber}</p></div>
+                    <p className='episodesCont_cont_title'>{episodeDatas.title}</p>
+                </div>
                 <EpisodeModal title={episodeDatas.title} overview={episodeDatas.overview} vote={episodeDatas.vote} background={episodeDatas.background} airDate={episodeDatas.airDate} episodeNumber={props.episodeNumber} />
                 <p className='episodesCont_vote'>{episodeDatas.vote}</p>
             </div>

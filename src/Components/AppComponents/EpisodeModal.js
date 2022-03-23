@@ -10,7 +10,7 @@ const EpisodeModal = (props) => {
 
     return (
         <>
-        <button onClick={toggle} className='modalEpisode_toggleBtn'>Infos</button>
+        <button onClick={toggle} className='modalEpisode_toggleBtn'>Infos sur l'épisode</button>
         {toggleModal && 
         <div className='modalEpisode_overlay'>
             <div className="modalEpisode_cont">

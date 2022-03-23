@@ -10,14 +10,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #333;
+        background: map-get($map: $colors, $key: tertiary );
         min-width: 200px;
         max-width: 200px;
         &_noImg p {
             display: flex;
             justify-content: center;
             width: 200px;height: auto;
-            color: white;
+            color: #f3f3f3;
         }
     }
     &_infos {

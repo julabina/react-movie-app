@@ -1,7 +1,7 @@
 .active  {
-    
-        color: #235789;
-        background: #C1292E;
+        color: map-get($map: $colors, $key: primary);
+        font-weight: 600;
+        background: map-get($map: $colors, $key: secondary ) ;
         
     }
     
@@ -35,7 +35,7 @@
     left: 0;right: 0;
     height: 30px;
     border-bottom: 1px solid black;
-    background: #C1292E;
+    background: map-get($map: $colors, $key: secondary);
     padding-left: 15px;
     color: #f3f3f3;
 }

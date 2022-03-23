@@ -4,7 +4,7 @@ header {
     right: 0;left: 0;
     display: flex;
     justify-content: space-between;
-    background: map-get($map: $colors, $key: primary );
+    background: map-get($map: $colors, $key: primary);
     height: 40px;
     text-align: center;
     padding: 0 10px
