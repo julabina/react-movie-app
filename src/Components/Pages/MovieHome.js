@@ -40,15 +40,16 @@ const MovieHome = () => {
     }
 
     return (
-        <main>
+        <main className='movieHome'> 
             <MovieNavBar /> 
             <h1 className='movieHome_title'>CINEMA</h1>
-            <form onSubmit={searchMovie}>
+            <div className="tvHome_separator"></div>
+            <form className='movieHome_form' onSubmit={searchMovie}>
                 <label>
                     Rechercher un film
-                    <input type="text" name="search" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+                    <input className='movieHome_form_inputTxt' type="text" name="search" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
                 </label>
-                <input type="submit"/>
+                <input className='movieHome_form_btn' type="submit"/>
             </form>  
             {}
             <ul>

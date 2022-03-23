@@ -2,10 +2,10 @@
     display: flex;
     width: 800px;
     height: 300px;
-    border: 1px solid black;
-    margin-top: 20px;
+     margin-top: 20px;
     box-sizing: content-box;
     border-radius: 3px;
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
     &_poster {
         display: flex;
         justify-content: center;

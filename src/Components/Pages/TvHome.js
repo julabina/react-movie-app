@@ -39,15 +39,16 @@ const TvHome = () => {
     }
 
     return (
-        <main>
+        <main className='tvHome'>
             <TvNavBar /> 
-            <h1 className='tvHome_title'>TV</h1>
-            <form onSubmit={searchTv}>
+            <h1 className='tvHome_title'>SERIE TV</h1>
+            <div className="tvHome_separator"></div>
+            <form className='movieHome_form' onSubmit={searchTv}>
                 <label>
                     Rechercher une serie
-                    <input type="text" name="search" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+                    <input className='tvHome_form_inputTxt' type="text" name="search" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
                 </label>
-                <input type="submit"/>
+                <input className='tvHome_form_btn' type="submit"/>
             </form>  
             {}
             <ul>
