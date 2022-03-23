@@ -149,17 +149,22 @@ body {
 }
 
 .active {
-  color: blue;
-  background: salmon;
+  color: #235789;
+  background: #C1292E;
 }
 
 .mainNavBar {
   display: flex;
   height: 40px;
 }
+.mainNavBar_linkCont {
+  margin-right: 10px;
+}
 .mainNavBar_linkCont_link {
   display: inline-block;
   padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   height: 100%;
 }
 
@@ -172,12 +177,16 @@ body {
 
 .littleNavBar {
   position: fixed;
+  display: flex;
+  align-items: center;
   top: 40px;
   left: 0;
   right: 0;
-  height: 20px;
+  height: 30px;
   border-bottom: 1px solid black;
-  background: salmon;
+  background: #C1292E;
+  padding-left: 15px;
+  color: #f3f3f3;
 }
 
 .tvSeasonCard {

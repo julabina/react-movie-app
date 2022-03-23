@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const TvNavBar = () => {
     return (
         <nav className='littleNavBar tvNavBar'>
-            <div className="toTvHome">
+            <div className="toTvHome tvNavBar_linkCont">
                 <NavLink to="/tv" >Home</NavLink>
             </div>
             <div className="tvNavBar_linkCont">

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const MovieNavBar = () => {
     return (
             <nav className='littleNavBar movieNavBar'>
-                <div className="toMovieHome">
+                <div className="movieNavBar_linkCont toMovieHome">
                     <NavLink to="/movie" >Home</NavLink>
                 </div>
                 <div className="movieNavBar_linkCont">
