@@ -1,0 +1,57 @@
+.contactCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact {
+    width: 600px;
+    border: 1px solid rgba(0, 0, 0, 0.349);
+    border-radius: 8px;
+    padding: 40px;
+    &_title {
+        margin: 90px 0 30px 0;
+    }
+    &_names {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        &_input {
+            height: 40px;
+            width: 245px;
+        }
+    }
+    &_email {
+        height: 40px;
+        width: 245px;
+    }
+    &_separator {
+        width: 520px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.212);
+        margin: 30px 0;
+    }
+    &_message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &_topic {
+            height: 40px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        &_txt {
+            resize: none;
+            width: 100%;
+        }
+        &_btn {
+            width: 100px;
+            height: 40px;
+            margin-top: 30px;
+            background: white;
+            border: 3px solid map-get($map: $colors, $key:secondary );
+            color: map-get($map: $colors, $key:secondary );
+            font-size: 0.9em;
+            border-radius: 40px;
+        }
+    }
+}
