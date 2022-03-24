@@ -18,10 +18,9 @@ const ModalAbout = () => {
             <div className="modalAbout_cont">
                 <div className="modalAbout_cont_modal">
                     <h1>A PROPOS</h1>
-                    <p>TEXT 1</p>
-                    <p>TEXT 2</p>
-                    <a href="https://www.flaticon.com/free-icons/cinema" title="cinema icons">Cinema icons created by pongsakornRed - Flaticon</a>
-                    <button onClick={openModal}>OK</button>
+                    <a href="https://github.com/julabina/react-movie-app">visite app repository</a>
+                    <a href="https://www.flaticon.com/free-icons/cinema" title="cinema icons">icon created by pongsakornRed</a>
+                    <button className='modalAbout_cont_modal_btn' onClick={openModal}>OK</button>
                 </div>
             </div>
         </div>
