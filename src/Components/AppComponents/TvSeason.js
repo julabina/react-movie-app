@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import SeasonModalOverview from './SeasonModalOverview';
 import TvEpisode from './TvEpisode';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -12,6 +11,7 @@ const TvSeason = (props) => {
     fetch('https://api.themoviedb.org/3/tv/' + props.serieId + '/season/' + props.season + '?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR')
     .then(res => res.json())
     .then(datas => {
+        console.log(datas);
         let item ;
         let arr = [];
         for (let i = 0; i < datas.episodes.length;i++) {
@@ -40,7 +40,7 @@ const toggleEpisodeHide = () => {
                 <img src={props.poster} alt={"affiche de la " + props.name} />
                 <div className="tvSeasonCard_main_cont">
                     <div className="tvSeasonCard_main_cont_infos">
-                        {(props.overview !== "") && <SeasonModalOverview overview={props.overview} />}
+                        {props.overview}
                     </div>
                     <div onClick={toggleEpisodeHide} className="tvSeasonCard_main_cont_episodeShow">
                         <p>Voir les épisodes</p>

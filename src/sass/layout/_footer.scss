@@ -2,10 +2,21 @@ footer {
     position: relative;
     bottom: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: maroon ;
+    justify-content: space-around;
+    background: map-get($map: $colors, $key:secondary ) ;
+    color: #f1f1f1;
     height: 150px;width: 100%;
     margin-top: 40px;
+    padding: 40px;
+}
+
+.footerInfos {
+    display: flex;
+    &_linkedin {
+        height: 25px;
+        margin-left: 15px;
+        margin-top: -3px;
+        fill: #f1f1f1;
+        cursor: pointer;
+    }
 }

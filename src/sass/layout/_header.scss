@@ -10,6 +10,14 @@ header {
     padding: 0 10px
 }
 
+.headerTitle {
+    z-index: -1;
+    position: absolute;
+    top: 10px;
+    left: 0;right: 0;
+    font-size: 1.4em;
+}
+
 .headerOption {
     display: flex;
     margin: 10px 35px 0 0;

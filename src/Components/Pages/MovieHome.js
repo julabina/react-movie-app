@@ -37,6 +37,7 @@ const MovieHome = () => {
     const searchMovie = (e) => {
         e.preventDefault();
         setSearchValue(inputValue);
+        setInputValue("");
     }
 
     return (

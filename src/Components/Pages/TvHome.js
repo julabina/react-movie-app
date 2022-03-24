@@ -36,6 +36,7 @@ const TvHome = () => {
     const searchTv = (e) => {
         e.preventDefault();
         setSearchValue(inputValue);
+        setInputValue("");
     }
 
     return (

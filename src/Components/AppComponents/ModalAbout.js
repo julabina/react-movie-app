@@ -20,6 +20,7 @@ const ModalAbout = () => {
                     <h1>A PROPOS</h1>
                     <p>TEXT 1</p>
                     <p>TEXT 2</p>
+                    <a href="https://www.flaticon.com/free-icons/cinema" title="cinema icons">Cinema icons created by pongsakornRed - Flaticon</a>
                     <button onClick={openModal}>OK</button>
                 </div>
             </div>

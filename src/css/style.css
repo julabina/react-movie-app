@@ -249,38 +249,6 @@ body {
   align-items: center;
 }
 
-.modalOverviewOverlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.774);
-}
-.modalOverviewOverlay_modal {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  width: 800px;
-  height: auto;
-  justify-content: center;
-  align-items: center;
-  background: #f2f2f2;
-  border-radius: 10px;
-}
-.modalOverviewOverlay_modal_cont {
-  padding: 20px 30px;
-}
-.modalOverviewOverlay_modal_cont h1 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
-}
-.modalOverviewOverlay--hidden {
-  display: none;
-}
-
 .modalAbout_overlay {
   position: fixed;
   top: 0;
@@ -410,6 +378,15 @@ header {
   padding: 0 10px;
 }
 
+.headerTitle {
+  z-index: -1;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  font-size: 1.4em;
+}
+
 .headerOption {
   display: flex;
   margin: 10px 35px 0 0;
@@ -444,13 +421,24 @@ footer {
   position: relative;
   bottom: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: maroon;
+  justify-content: space-around;
+  background: #003166;
+  color: #f1f1f1;
   height: 150px;
   width: 100%;
   margin-top: 40px;
+  padding: 40px;
+}
+
+.footerInfos {
+  display: flex;
+}
+.footerInfos_linkedin {
+  height: 25px;
+  margin-left: 15px;
+  margin-top: -3px;
+  fill: #f1f1f1;
+  cursor: pointer;
 }
 
 .home ul {
@@ -463,6 +451,12 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.movieList select {
+  background: #f3f3f3;
+  border: rgba(0, 0, 0, 0.342) 1px solid;
+  height: 30px;
+  padding: 0 5px;
 }
 .movieList_options {
   display: flex;
@@ -601,7 +595,8 @@ footer {
   justify-content: center;
   align-items: center;
   width: 300px;
-  height: 100px;
+  height: 120px;
+  min-height: 100px;
   border-radius: 5px;
   margin-top: 190px;
   background: #EBEBEB;
@@ -779,6 +774,12 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.tvList select {
+  background: #f3f3f3;
+  border: rgba(0, 0, 0, 0.342) 1px solid;
+  height: 30px;
+  padding: 0 5px;
 }
 .tvList_options {
   display: flex;
