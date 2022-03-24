@@ -1,5 +1,15 @@
-.home ul {
+.home {
    display: flex;
-   flex-direction: column;
+   justify-content: center;
    align-items: center;
+   &_link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;width: 150px;
+      background: map-get($colors, primary);
+      border: map-get($map: $colors, $key: secondary) 5px solid;
+      border-radius: 15px;
+      margin: 20px;
+   }
 }
