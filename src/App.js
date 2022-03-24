@@ -17,6 +17,7 @@ import TvSeason from "./Components/AppComponents/TvSeason";
 import Footer from "./Components/Layout/Footer";
 import ModalAbout from "./Components/AppComponents/ModalAbout";
 import Contact from "./Components/Pages/Contact";
+import ToTop from "./Components/AppComponents/ToTop";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
       </Routes>
       <ModalAbout />
+      <ToTop />
       <Footer />
     </>
   );
