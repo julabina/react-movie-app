@@ -1,16 +1,13 @@
 import React from 'react';
 
 const NotFound = () => {
-    console.log('404');
     return (
-        <div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <h1>404 NOTFOUND</h1>
-            <button>BACK TO HOME</button>
-        </div>
+        <main>
+            <div className="notFound">
+                <h2>Page not found</h2>
+                <p>404</p>
+            </div>
+        </main>
     );
 };
 
