@@ -50,7 +50,7 @@ const MovieHome = () => {
                     Rechercher un film
                     <input className='movieHome_form_inputTxt' type="text" name="search" value={inputValue} onChange={(e) => setInputValue(e.target.value)}  autoComplete='off'/>
                 </label>
-                <input className='movieHome_form_btn' type="submit"/>
+                <input className='movieHome_form_btn' type="submit" value="Rechercher"/>
             </form>  
             {}
             <ul>

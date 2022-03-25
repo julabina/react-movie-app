@@ -33,6 +33,10 @@ const TvPopular = () => {
 
     const changePage = (val) => {
        let newVal = changePagePopular + val;
+       window.scrollTo({
+        top:0,
+        behavior: 'smooth'
+        });
        setChangePagePopular(newVal);
     }
     return (

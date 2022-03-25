@@ -34,7 +34,12 @@ const MoviePopular = () => {
 
     const changePage = (val) => {
         let newVal = changePagePopular + val;
-       setChangePagePopular(newVal);
+        document.querySelector("body").scrollTo(0,0)
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth'
+        });
+        setChangePagePopular(newVal);
     }
 
     return (

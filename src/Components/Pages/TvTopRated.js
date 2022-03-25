@@ -33,6 +33,10 @@ const TvTopRated = () => {
 
     const changePage = (val) => {
        let newVal = changePageTopRated + val;
+       window.scrollTo({
+        top:0,
+        behavior: 'smooth'
+        });
        setChangePageTopRated(newVal);
     }
     return (

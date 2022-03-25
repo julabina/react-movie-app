@@ -57,6 +57,10 @@ const TvList = () => {
         newArr.push(tvListOption[0]);
         newArr.push(tvListOption[1]);
         newArr.push(numb); 
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth'
+        });
         setTvListOption(newArr);
     }
 

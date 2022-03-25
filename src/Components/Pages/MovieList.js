@@ -58,6 +58,10 @@ const MovieList = () => {
         newArr.push(movieListOption[0]);
         newArr.push(movieListOption[1]);
         newArr.push(numb); 
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth'
+        });
         setMovieListOption(newArr);
     }
     

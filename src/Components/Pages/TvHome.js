@@ -49,7 +49,7 @@ const TvHome = () => {
                     Rechercher une serie
                     <input className='tvHome_form_inputTxt' type="text" name="search" value={inputValue} onChange={(e) => setInputValue(e.target.value)}  autoComplete='off'/>
                 </label>
-                <input className='tvHome_form_btn' type="submit"/>
+                <input className='tvHome_form_btn' type="submit" value="Rechercher"/>
             </form>  
             {}
             <ul>
