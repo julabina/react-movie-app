@@ -8,10 +8,25 @@ footer {
     height: 150px;width: 100%;
     margin-top: 40px;
     padding: 40px;
+    p {
+        transition: opacity 300ms ease-in-out;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.7;
+            transition: opacity 200ms ease-in-out;
+        }
+    }
 }
 
 .footerInfos {
     display: flex;
+    &_toContact {
+        transition: opacity 300ms ease-in-out;
+        &:hover {
+            opacity: 0.7;
+            transition: opacity 200ms ease-in-out;
+        }
+    }
     &_linkedin {
         @include social;
         margin-left: 15px;

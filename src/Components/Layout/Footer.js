@@ -7,7 +7,7 @@ const Footer = () => {
            <p>© - Seriescope</p>
            <div className="footerInfos">
                <NavLink className={({isActive}) => {
-                   return isActive ? "" : "";
+                   return isActive ? "footerInfos_toContact" : "footerInfos_toContact";
                }} to="/contact">
                    Contact
                </NavLink>

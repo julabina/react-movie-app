@@ -6,6 +6,7 @@
     box-sizing: content-box;
     border-radius: 3px;
     box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 300ms ease-in-out;
     &_poster {
         display: flex;
         justify-content: center;
@@ -37,5 +38,9 @@
             text-indent: 30px;
             overflow: scroll;
         }
+    }
+    &:hover {
+        transform: scale(1.03);
+        transition: transform 300ms ease-in-out;
     }
 }

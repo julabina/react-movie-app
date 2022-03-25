@@ -39,6 +39,11 @@
         background: initial;
         border : 4px solid rgba(128, 128, 128, 0.205);
         cursor: pointer;
+        transition: all 200ms ease-in-out;
+        &:hover {
+            border-color: map-get($colors, primary);
+            transition: all 200ms ease-in-out;
+        }
     }
     &_overlay {
         position: fixed;

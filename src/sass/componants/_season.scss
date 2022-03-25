@@ -43,6 +43,11 @@
                 border-top: 1px solid #3337;
                 cursor: pointer;
                 user-select: none;
+                transition: color 200ms ease-in;
+                &:hover {
+                    color: map-get($map: $colors, $key:primary );
+                    transition: all 200ms ease-in;
+                }
             }
         }
     }
