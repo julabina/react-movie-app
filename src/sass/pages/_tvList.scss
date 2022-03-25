@@ -1,35 +1,3 @@
 .tvList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    select {
-        background: #f3f3f3;
-        border: rgba(0, 0, 0, 0.342) 1px solid;
-        height: 30px;
-        padding: 0 5px;
-    }
-    &_options {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 40px;
-        width: 500px;
-    }
-    &_pagesBtn {
-        margin-top: 30px;
-        &_btn{
-            height: 40px;
-            width: 40px;
-            border: none;
-            background: none;
-            border-top: 1px solid black;
-            border-bottom: 1px solid black;
-            cursor: pointer;
-            &--active {
-                color: map-get($map: $colors, $key: primary);
-                font-weight: 700;
-                font-size: 1.1em;
-                padding-bottom: 4px;
-            }
-        }
-    }
+    @include list;
 }

@@ -13,4 +13,9 @@
     color: rgba(0, 0, 0, 0.288);
     background: rgb(240, 238, 238);
     cursor: pointer;
+    transition: all 150ms ease-in-out;
+    &:hover {
+        background: rgb(206, 205, 205);
+        transition: all 150ms ease-in-out;
+    }
 }
