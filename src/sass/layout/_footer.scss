@@ -13,10 +13,11 @@ footer {
 .footerInfos {
     display: flex;
     &_linkedin {
-        height: 25px;
+        @include social;
         margin-left: 15px;
-        margin-top: -3px;
-        fill: #f1f1f1;
-        cursor: pointer;
+    }
+    &_github {
+        @include social;
+        margin-left: 10px;
     }
 }

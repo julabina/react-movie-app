@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <header>
             <NavBar />
-            <h1 className='headerTitle'>TITRE DU SITE</h1>
+            <h1 className='headerTitle'>SERIESCOPE</h1>
             <div className="headerOption">
                 <div className="headerOption_darkmod">
                     <label />

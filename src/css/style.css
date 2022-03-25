@@ -282,6 +282,11 @@ body {
   text-align: center;
   margin-bottom: 25px;
 }
+.modalAbout_cont_modal a {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 7px;
+}
 .modalAbout_cont_modal_btn {
   margin-top: 15px;
   width: 60px;
@@ -471,10 +476,17 @@ footer {
 }
 .footerInfos_linkedin {
   height: 25px;
-  margin-left: 15px;
-  margin-top: -3px;
   fill: #f1f1f1;
+  margin-top: -3px;
   cursor: pointer;
+  margin-left: 15px;
+}
+.footerInfos_github {
+  height: 25px;
+  fill: #f1f1f1;
+  margin-top: -3px;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
 .home {

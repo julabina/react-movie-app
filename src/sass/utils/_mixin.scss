@@ -44,3 +44,10 @@
          }
      }
 }
+
+@mixin social {
+    height: 25px;
+    fill: #f1f1f1;
+    margin-top: -3px;
+    cursor: pointer;
+}
