@@ -384,11 +384,12 @@ body {
 }
 
 .toTop {
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: 180px;
+  bottom: 70px;
   right: 70px;
   transform: rotate(180deg);
   height: 40px;
@@ -396,7 +397,7 @@ body {
   border-radius: 8px;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.288);
-  background: rgba(0, 0, 0, 0.055);
+  background: #f0eeee;
   cursor: pointer;
 }
 
