@@ -66,10 +66,9 @@ const MovieList = () => {
     }
     
     return (
-        <>
         <main className='movieList'> 
             <MovieNavBar />
-                <div className="movieList_options">
+            <section className="movieList_options">
                     <select defaultValue="release_date" name="sortBy" onChange={(e) => sortList(e.target.value)}>
                         <option value="popularity">Popularité</option>
                         <option value="release_date">Date de sortie</option>
@@ -79,8 +78,8 @@ const MovieList = () => {
                         <option value="desc">↓</option>
                         <option value="asc">↑</option>
                     </select> 
-                </div>
-              <ul>
+            </section>
+            <ul>
               {dataMovieList.map((el) => {
                   return (
                       <MovieCard title={el.title} key={el.id} id={el.id} release={el.release}
@@ -88,15 +87,14 @@ const MovieList = () => {
                       )
                     })}      
             </ul>
-            <div className="movieList_pagesBtn">
+            <section className="movieList_pagesBtn">
                     {(movieListOption[2] !== 1) && <button onClick={() => changePage(-1)} className='movieList_pagesBtn_btn'>{movieListOption[2] - 1}</button>}
                     <button className='movieList_pagesBtn_btn movieList_pagesBtn_btn--active'>{movieListOption[2]}</button>             
                     {(movieListOption[2] <  totalPages) && <button onClick={() => changePage(1)} className='movieList_pagesBtn_btn'>{movieListOption[2] + 1}</button>}
                     {(movieListOption[2] < (totalPages - 1) ) && <button onClick={() => changePage(2)} className='movieList_pagesBtn_btn'>{movieListOption[2] + 2}</button>}
                     {(movieListOption[2] < (totalPages - 2) ) && <button onClick={() => changePage(3)} className='movieList_pagesBtn_btn'>{movieListOption[2] + 3}</button>}            
-            </div>
+            </section>
         </main>
-        </>
     );
 };
 

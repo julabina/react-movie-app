@@ -42,7 +42,7 @@ const TvHome = () => {
     return (
         <main className='tvHome'>
             <TvNavBar /> 
-            <h1 className='tvHome_title'>SERIE TV</h1>
+            <h2 className='tvHome_title'>SERIE TV</h2>
             <div className="tvHome_separator"></div>
             <form className='movieHome_form' onSubmit={searchTv}>
                 <label>

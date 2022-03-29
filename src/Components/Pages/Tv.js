@@ -71,7 +71,7 @@ const Tv = () => {
     return (
         <main>
             <TvNavBar />
-            <div className='tvBackdrop' style={{
+            <section className='tvBackdrop' style={{
                 backgroundImage: 'url("' + tvBDrop + '")'
             }} >
                 <div className="tvBackdrop_container">
@@ -92,8 +92,8 @@ const Tv = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="tvInfosContainer">
+            </section>
+            <section className="tvInfosContainer">
                 <div className="tvInfosContainer_release">
                     <p>1ere diffusion : <span>{datasTvShow.firstDiff}</span></p>
                 </div>
@@ -101,7 +101,7 @@ const Tv = () => {
                     <div className="tvInfosContainer_overview_header"><p className='tvInfosContainer_overview_header_title'>Synopsis</p></div>
                     <p className='tvInfosContainer_overview_txt'>{datasTvShow.overview}</p>
                 </div>
-            </div>
+            </section>
             <ul className='seasonList'>
                 {seasonDatas.map((el) => {
                     return (

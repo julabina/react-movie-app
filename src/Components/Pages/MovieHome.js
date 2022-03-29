@@ -43,7 +43,7 @@ const MovieHome = () => {
     return (
         <main className='movieHome'> 
             <MovieNavBar /> 
-            <h1 className='movieHome_title'>CINEMA</h1>
+            <h2 className='movieHome_title'>CINEMA</h2>
             <div className="tvHome_separator"></div>
             <form className='movieHome_form' onSubmit={searchMovie}>
                 <label>
@@ -52,7 +52,6 @@ const MovieHome = () => {
                 </label>
                 <input className='movieHome_form_btn' type="submit" value="Rechercher"/>
             </form>  
-            {}
             <ul>
                 {datasMovieSearch.map((el) => {
                     return  <MovieCard title={el.title} key={el.id} id={el.id} release={el.release} poster={el.img} overview={el.overview} movieId={el.movieId} fromHome={true} />

@@ -49,10 +49,9 @@ const Movie = () => {
     },[])
     
     return (
-        <>
         <main>
         <MovieNavBar />
-            <div className='movieBackdrop' style={{
+            <section className='movieBackdrop' style={{
                 backgroundImage: 'url("' + bDrop + '")'
             }} >
                 <div className="movieBackdrop_container">
@@ -61,7 +60,7 @@ const Movie = () => {
                     </div>
                     <div className="movieBackdrop_container_infos">
                         <div className="movieBackdrop_container_infos_top">
-                            <h1>{movieData.title}</h1>
+                            <h2>{movieData.title}</h2>
                             {(movieData.movieDirector !== undefined) && <p>Un film de {movieData.movieDirector}</p>}
                         </div>
                         <div className="movieBackdrop_container_infos_bottom">
@@ -73,8 +72,8 @@ const Movie = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="movieInfosContainer">
+            </section>
+            <section className="movieInfosContainer">
                 <div className="movieInfosContainer_release">
                     <p>Date de sortie : <span>{movieData.release}</span></p>
                 </div>
@@ -82,10 +81,9 @@ const Movie = () => {
                     <div className="movieInfosContainer_overview_header"><p className='movieInfosContainer_overview_header_title'>Synopsis</p></div>
                     <p className='movieInfosContainer_overview_txt'>{movieData.overview}</p>
                 </div>
-            </div>
+            </section>
         </main>
-        </>
-    );
+        );
 };
 
 export default Movie;

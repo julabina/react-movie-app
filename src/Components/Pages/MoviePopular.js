@@ -45,7 +45,7 @@ const MoviePopular = () => {
     return (
         <main className='movieList'> 
             <MovieNavBar />
-            <div className="movieList_options"></div>
+            <section className="movieList_options"></section>
             <ul>
               {dataMoviePopular.map((el) => {
                   return (
@@ -54,13 +54,13 @@ const MoviePopular = () => {
                       )
                     })}      
             </ul>
-            <div className="movieList_pagesBtn">
+            <section className="movieList_pagesBtn">
                     {(changePagePopular !== 1) && <button onClick={() => changePage(-1)} className='movieList_pagesBtn_btn'>{changePagePopular - 1}</button>}
                     <button className='movieList_pagesBtn_btn movieList_pagesBtn_btn--active'>{changePagePopular}</button>             
                     {(changePagePopular <  totalPages) && <button onClick={() => changePage(1)} className='movieList_pagesBtn_btn'>{changePagePopular + 1}</button>}
                     {(changePagePopular < (totalPages - 1) ) && <button onClick={() => changePage(2)} className='movieList_pagesBtn_btn'>{changePagePopular + 2}</button>}
                     {(changePagePopular < (totalPages - 2) ) && <button onClick={() => changePage(3)} className='movieList_pagesBtn_btn'>{changePagePopular + 3}</button>}            
-            </div>
+            </section>
         </main>
     );
 };

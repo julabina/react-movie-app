@@ -25,7 +25,7 @@ const Contact = () => {
 
     return (
         <main>
-            <div className="contactCont">
+            <section className="contactCont">
                 <h2 className='contact_title'>Contact</h2>
                 <form className='contact' onSubmit={sendMessage}>
                     <div className="contact_names">
@@ -40,7 +40,7 @@ const Contact = () => {
                         <button className='contact_message_btn' type="submit">Envoyer</button>
                     </div>
                 </form>
-            </div>
+            </section>
         </main>
     );
 };

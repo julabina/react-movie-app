@@ -42,7 +42,7 @@ const TvPopular = () => {
     return (
         <main className='tvList'> 
             <TvNavBar />
-            <div className="tvList_options"></div>
+            <section className="tvList_options"></section>
                 <ul>
                 {dataTvPopular.map((el) => {
                     return (
@@ -50,13 +50,13 @@ const TvPopular = () => {
                         )
                         })}      
                 </ul>
-                <div className="tvList_pagesBtn">
+                <section className="tvList_pagesBtn">
                     {(changePagePopular !== 1) && <button onClick={() => changePage(-1)} className='tvList_pagesBtn_btn'>{changePagePopular - 1}</button>}
                     <button className='tvList_pagesBtn_btn tvList_pagesBtn_btn--active'>{changePagePopular}</button>             
                     {(changePagePopular <  totalPages) && <button onClick={() => changePage(1)} className='tvList_pagesBtn_btn'>{changePagePopular + 1}</button>}
                     {(changePagePopular < (totalPages - 1) ) && <button onClick={() => changePage(2)} className='tvList_pagesBtn_btn'>{changePagePopular + 2}</button>}
                     {(changePagePopular < (totalPages - 2) ) && <button onClick={() => changePage(3)} className='tvList_pagesBtn_btn'>{changePagePopular + 3}</button>}            
-            </div>
+            </section>
         </main>
     );
 };
