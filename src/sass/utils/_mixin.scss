@@ -49,6 +49,12 @@
             }
          }
      }
+     @include forMobile {
+        a {
+            display: flex;
+            justify-content: center;
+        }
+    }
 }
 
 @mixin social {
@@ -108,10 +114,22 @@
             }
         }
     }
+    @include forMobile {
+        a {
+            display: flex;
+            justify-content: center;
+        }
+    }
 }
 
 @mixin forTablet {
     @media screen and (max-width: map-get($queries, tablet)) {
+        @content
+    }
+}
+
+@mixin forMobile {
+    @media screen and (max-width: map-get($queries, mobile)) {
         @content
     }
 }

@@ -118,6 +118,33 @@ body {
     transform: scale(1);
   }
 }
+@media screen and (max-width: 840px) {
+  .movieCard {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .movieCard_poster {
+    height: 300px;
+    max-width: 200px;
+    min-width: 200px;
+    background: transparent;
+    margin-top: 10px;
+  }
+  .movieCard_poster_noImg p {
+    color: #000;
+  }
+  .movieCard_poster img {
+    object-fit: cover;
+    height: 300px;
+    width: 200px;
+  }
+  .movieCard_infos p {
+    overflow: hidden;
+    height: 312px;
+  }
+}
 
 .tvCard {
   display: flex;
@@ -165,6 +192,33 @@ body {
 @media screen and (max-width: 1180px) {
   .tvCard:hover {
     transform: scale(1);
+  }
+}
+@media screen and (max-width: 840px) {
+  .tvCard {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tvCard_poster {
+    height: 300px;
+    max-width: 200px;
+    min-width: 200px;
+    background: transparent;
+    margin-top: 10px;
+  }
+  .tvCard_poster_noImg p {
+    color: #000;
+  }
+  .tvCard_poster img {
+    object-fit: cover;
+    height: 300px;
+    width: 200px;
+  }
+  .tvCard_infos p {
+    overflow: hidden;
+    height: 312px;
   }
 }
 
@@ -285,6 +339,31 @@ body {
     width: 800px;
   }
 }
+@media screen and (max-width: 840px) {
+  .tvSeasonCard {
+    width: 90%;
+    margin-bottom: 70px;
+  }
+  .tvSeasonCard img {
+    height: 100%;
+    width: 200px;
+  }
+  .tvSeasonCard_main {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .tvSeasonCard_main_cont_infos {
+    display: none;
+  }
+  .tvSeasonCard_main_cont_episodeShow {
+    height: 40px;
+    align-items: center;
+  }
+  .tvSeasonCard ul {
+    margin-top: 40px;
+  }
+}
 
 .seasonList {
   display: flex;
@@ -386,6 +465,29 @@ body {
   text-align: right;
   margin-right: 10px;
 }
+@media screen and (max-width: 840px) {
+  .episodesCont {
+    height: 70px;
+  }
+  .episodesCont_cont {
+    width: 50%;
+    padding-right: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+  }
+  .episodesCont_cont_number {
+    height: 70px;
+    max-width: 50px;
+    min-width: 50px;
+  }
+  .episodesCont_cont_title {
+    width: 400px;
+    overflow: initial;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
 
 .modalEpisode_toggleBtn {
   background: initial;
@@ -445,6 +547,33 @@ body {
   justify-content: space-between;
   margin-bottom: 15px;
 }
+@media screen and (max-width: 840px) {
+  .modalEpisode_toggleBtn {
+    height: 60px;
+    max-width: 100px;
+    min-width: 70px;
+  }
+  .modalEpisode_toggleBtn:hover {
+    border-color: rgba(128, 128, 128, 0.205);
+  }
+  .modalEpisode_cont {
+    width: 90%;
+    top: 50%;
+  }
+  .modalEpisode_cont_modal {
+    padding: 20px;
+  }
+  .modalEpisode_cont_modal img {
+    width: 100%;
+  }
+  .modalEpisode_cont_modal_closeBtn {
+    height: 40px;
+    width: 40px;
+    top: 30px;
+    right: 30px;
+    border-radius: 10px;
+  }
+}
 
 .toTop {
   z-index: 1;
@@ -467,6 +596,11 @@ body {
 .toTop:hover {
   background: #cecdcd;
   transition: all 150ms ease-in-out;
+}
+@media screen and (max-width: 1180px) {
+  .toTop {
+    display: none !important;
+  }
 }
 
 header {
@@ -642,6 +776,12 @@ footer p:hover {
   opacity: 0.7;
   transition: opacity 250ms ease-in-out;
 }
+@media screen and (max-width: 840px) {
+  .movieList a {
+    display: flex;
+    justify-content: center;
+  }
+}
 
 .movieHome {
   display: flex;
@@ -694,6 +834,12 @@ footer p:hover {
   background: #003166;
   color: #f1f1f1;
   transition: all 150ms ease-in-out;
+}
+@media screen and (max-width: 840px) {
+  .movieHome a {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .movieBackdrop {
@@ -770,6 +916,33 @@ footer p:hover {
     max-height: 300px;
   }
 }
+@media screen and (max-width: 840px) {
+  .movieBackdrop {
+    background-size: auto 100%;
+    height: auto;
+  }
+  .movieBackdrop_container {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 50px;
+    width: 100%;
+  }
+  .movieBackdrop_container_infos {
+    width: 90%;
+  }
+  .movieBackdrop_container_poster {
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .movieBackdrop_container_poster img {
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.267);
+  }
+}
 
 .movieInfosContainer {
   display: flex;
@@ -825,6 +998,21 @@ footer p:hover {
   .movieInfosContainer_overview {
     width: 580px;
     margin: 20px 0 40px 20px;
+  }
+}
+@media screen and (max-width: 840px) {
+  .movieInfosContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .movieInfosContainer_release {
+    width: 50%;
+    margin: 35px 0 25px;
+    padding: 25px 25px;
+  }
+  .movieInfosContainer_overview {
+    width: 90%;
+    margin: initial;
   }
 }
 
@@ -902,6 +1090,33 @@ footer p:hover {
     max-height: 300px;
   }
 }
+@media screen and (max-width: 840px) {
+  .tvBackdrop {
+    background-size: auto 100%;
+    height: auto;
+  }
+  .tvBackdrop_container {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 0;
+    margin-top: 50px;
+    width: 100%;
+  }
+  .tvBackdrop_container_infos {
+    width: 90%;
+  }
+  .tvBackdrop_container_poster {
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .tvBackdrop_container_poster img {
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.267);
+  }
+}
 
 .tvInfosContainer {
   display: flex;
@@ -958,6 +1173,22 @@ footer p:hover {
     margin: 20px 0 40px 20px;
   }
 }
+@media screen and (max-width: 840px) {
+  .tvInfosContainer {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  .tvInfosContainer_release {
+    width: 50%;
+    margin: 35px 0 25px;
+    padding: 25px 25px;
+  }
+  .tvInfosContainer_overview {
+    width: 90%;
+    margin: initial;
+  }
+}
 
 .tvHome {
   display: flex;
@@ -1011,6 +1242,12 @@ footer p:hover {
   color: #f1f1f1;
   transition: all 150ms ease-in-out;
 }
+@media screen and (max-width: 840px) {
+  .tvHome a {
+    display: flex;
+    justify-content: center;
+  }
+}
 
 .tvList {
   display: flex;
@@ -1051,6 +1288,12 @@ footer p:hover {
 .tvList_pagesBtn_btn:hover {
   opacity: 0.7;
   transition: opacity 250ms ease-in-out;
+}
+@media screen and (max-width: 840px) {
+  .tvList a {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .contactCont {

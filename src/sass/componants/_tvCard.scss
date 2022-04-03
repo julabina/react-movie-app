@@ -44,4 +44,31 @@
             transform: scale(1);
         }
     }
+    @include forMobile {
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        &_poster {
+            height: 300px;
+            max-width: 200px;
+            min-width: 200px;
+            background: transparent;
+            margin-top: 10px;
+            &_noImg p {
+                color: #000;
+            }
+            img {
+                object-fit: cover;
+                height: 300px;
+                width: 200px;
+            }
+        }
+        &_infos {
+            p {
+                overflow: hidden;
+                height: 312px;
+            }
+        }
+    }
 }
