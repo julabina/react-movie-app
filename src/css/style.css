@@ -113,6 +113,11 @@ body {
   transform: scale(1.03);
   transition: transform 300ms ease-in-out;
 }
+@media screen and (max-width: 1180px) {
+  .movieCard:hover {
+    transform: scale(1);
+  }
+}
 
 .tvCard {
   display: flex;
@@ -156,6 +161,11 @@ body {
 .tvCard:hover {
   transform: scale(1.03);
   transition: transform 300ms ease-in-out;
+}
+@media screen and (max-width: 1180px) {
+  .tvCard:hover {
+    transform: scale(1);
+  }
 }
 
 .active {
@@ -269,6 +279,11 @@ body {
 }
 .tvSeasonCard_episodes--hidden {
   display: none;
+}
+@media screen and (max-width: 1180px) {
+  .tvSeasonCard {
+    width: 800px;
+  }
 }
 
 .seasonList {
@@ -734,6 +749,27 @@ footer p:hover {
   max-height: 450px;
   user-select: none;
 }
+@media screen and (max-width: 1180px) {
+  .movieBackdrop {
+    height: 400px;
+  }
+  .movieBackdrop_container {
+    margin-bottom: -50px;
+  }
+  .movieBackdrop_container_infos {
+    width: 600px;
+  }
+  .movieBackdrop_container_infos_top h2 {
+    font-size: 1.4em;
+  }
+  .movieBackdrop_container_poster {
+    height: 300px;
+    width: 200px;
+  }
+  .movieBackdrop_container_poster img {
+    max-height: 300px;
+  }
+}
 
 .movieInfosContainer {
   display: flex;
@@ -776,6 +812,20 @@ footer p:hover {
 .movieInfosContainer_overview_txt {
   padding: 20px 40px;
   text-indent: 30px;
+}
+@media screen and (max-width: 1180px) {
+  .movieInfosContainer_release {
+    width: 200px;
+    padding: 0 25px;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 70px;
+    height: auto;
+  }
+  .movieInfosContainer_overview {
+    width: 580px;
+    margin: 20px 0 40px 20px;
+  }
 }
 
 .tvBackdrop {
@@ -831,6 +881,27 @@ footer p:hover {
   max-height: 450px;
   user-select: none;
 }
+@media screen and (max-width: 1180px) {
+  .tvBackdrop {
+    height: 400px;
+  }
+  .tvBackdrop_container {
+    margin-bottom: -50px;
+  }
+  .tvBackdrop_container_infos {
+    width: 600px;
+  }
+  .tvBackdrop_container_infos_top h2 {
+    font-size: 1.4em;
+  }
+  .tvBackdrop_container_poster {
+    height: 300px;
+    width: 200px;
+  }
+  .tvBackdrop_container_poster img {
+    max-height: 300px;
+  }
+}
 
 .tvInfosContainer {
   display: flex;
@@ -872,6 +943,20 @@ footer p:hover {
 .tvInfosContainer_overview_txt {
   padding: 20px 40px;
   text-indent: 30px;
+}
+@media screen and (max-width: 1180px) {
+  .tvInfosContainer_release {
+    width: 200px;
+    padding: 0 25px;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 70px;
+    height: auto;
+  }
+  .tvInfosContainer_overview {
+    width: 580px;
+    margin: 20px 0 40px 20px;
+  }
 }
 
 .tvHome {

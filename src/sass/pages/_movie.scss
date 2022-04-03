@@ -50,6 +50,27 @@
             }
         }
     }
+    @include forTablet {
+        height: 400px;
+        &_container {
+            margin-bottom: -50px ;
+            &_infos {
+                width: 600px;
+                &_top {
+                    h2 {
+                        font-size: 1.4em;
+                    }
+                }
+            }
+            &_poster {
+                height: 300px;
+                width: 200px;
+                img {
+                    max-height: 300px;
+                }
+            }
+        }
+    }
 }
 
 .movieInfosContainer {
@@ -91,6 +112,20 @@
         &_txt {
             padding: 20px 40px;
             text-indent: 30px;
+        }
+    }
+    @include forTablet {
+        &_release {
+            width: 200px;
+            padding: 0 25px ;
+            text-align: center; 
+            line-height: 1.5;
+            margin-top: 70px;
+            height: auto;
+        }
+        &_overview {
+            width: 580px;
+            margin: 20px 0 40px 20px;
         }
     }
 }

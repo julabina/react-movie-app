@@ -43,4 +43,9 @@
         transform: scale(1.03);
         transition: transform 300ms ease-in-out;
     }
+    @include forTablet {
+        &:hover {
+            transform: scale(1);
+        }
+    }
 }

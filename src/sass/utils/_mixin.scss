@@ -109,3 +109,9 @@
         }
     }
 }
+
+@mixin forTablet {
+    @media screen and (max-width: map-get($queries, tablet)) {
+        @content
+    }
+}
