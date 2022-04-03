@@ -142,7 +142,8 @@ body {
   }
   .movieCard_infos p {
     overflow: hidden;
-    height: 312px;
+    height: auto;
+    max-height: 312px;
   }
 }
 
@@ -218,7 +219,8 @@ body {
   }
   .tvCard_infos p {
     overflow: hidden;
-    height: 312px;
+    max-height: 312px;
+    height: auto;
   }
 }
 

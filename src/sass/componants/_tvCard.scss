@@ -67,7 +67,8 @@
         &_infos {
             p {
                 overflow: hidden;
-                height: 312px;
+                max-height: 312px;
+                height: auto;
             }
         }
     }
