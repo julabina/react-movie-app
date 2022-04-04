@@ -250,6 +250,51 @@ body {
   color: #f3f3f3;
   transition: color 200ms ease-in-out;
 }
+@media screen and (max-width: 840px) {
+  .mainNavBar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    height: 305px;
+    width: 200px;
+    z-index: 10;
+    background: #D8464B;
+    border-right: 5px double black;
+    border-bottom: 5px double black;
+  }
+  .mainNavBar_linkCont {
+    border-bottom: 1px solid black;
+    margin-right: initial;
+    height: 100px;
+  }
+  .mainNavBar_linkCont:last-child {
+    border-bottom: 1px solid transparent;
+  }
+  .mainNavBar_linkCont_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+  }
+  .mainNavBar--active {
+    display: block;
+  }
+}
+
+.hambMenu {
+  position: absolute;
+  display: none;
+  top: 5px;
+  left: 5px;
+  height: 30px;
+}
+@media screen and (max-width: 840px) {
+  .hambMenu {
+    display: block;
+  }
+}
 
 .movieNavBar, .tvNavBar {
   z-index: 1;
@@ -277,6 +322,12 @@ body {
   background: #003166;
   padding-left: 15px;
   color: #f3f3f3;
+}
+@media screen and (max-width: 840px) {
+  .littleNavBar {
+    height: 60px;
+    font-size: 0.8em;
+  }
 }
 
 .tvSeasonCard {
@@ -618,6 +669,12 @@ header {
   text-align: center;
   padding: 0 10px;
 }
+@media screen and (max-width: 840px) {
+  header {
+    z-index: 10;
+    padding-left: 0;
+  }
+}
 
 .headerTitle {
   z-index: -1;
@@ -658,6 +715,13 @@ header {
   opacity: 0.5;
   transition: all 200ms ease-in-out;
 }
+@media screen and (max-width: 840px) {
+  .headerOption {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+  }
+}
 
 main {
   margin-top: 40px;
@@ -677,11 +741,12 @@ footer {
   margin-top: 40px;
   padding: 40px;
 }
-footer p {
+
+.footer-homeLink {
   transition: opacity 300ms ease-in-out;
   cursor: pointer;
 }
-footer p:hover {
+.footer-homeLink:hover {
   opacity: 0.7;
   transition: opacity 200ms ease-in-out;
 }
@@ -782,6 +847,13 @@ footer p:hover {
   .movieList a {
     display: flex;
     justify-content: center;
+  }
+  .movieList select {
+    height: 40px;
+  }
+  .movieList_options {
+    width: 90%;
+    margin-top: 80px;
   }
 }
 
@@ -1296,6 +1368,13 @@ footer p:hover {
     display: flex;
     justify-content: center;
   }
+  .tvList select {
+    height: 40px;
+  }
+  .tvList_options {
+    width: 90%;
+    margin-top: 80px;
+  }
 }
 
 .contactCont {
@@ -1354,6 +1433,26 @@ footer p:hover {
   color: #003166;
   font-size: 0.9em;
   border-radius: 40px;
+}
+@media screen and (max-width: 840px) {
+  .contact {
+    width: 90%;
+  }
+  .contact_names {
+    flex-direction: column;
+  }
+  .contact_names_input {
+    width: 100%;
+  }
+  .contact_names_input:first-child {
+    margin-bottom: 30px;
+  }
+  .contact_email {
+    width: 100%;
+  }
+  .contact_separator {
+    width: 100%;
+  }
 }
 
 .notFound {

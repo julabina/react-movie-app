@@ -8,13 +8,14 @@ footer {
     height: 150px;width: 100%;
     margin-top: 40px;
     padding: 40px;
-    p {
-        transition: opacity 300ms ease-in-out;
-        cursor: pointer;
-        &:hover {
-            opacity: 0.7;
-            transition: opacity 200ms ease-in-out;
-        }
+}
+
+.footer-homeLink {
+    transition: opacity 300ms ease-in-out;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.7;
+        transition: opacity 200ms ease-in-out;
     }
 }
 

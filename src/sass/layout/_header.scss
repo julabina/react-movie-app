@@ -8,7 +8,11 @@ header {
     background: map-get($map: $colors, $key: primary);
     height: 40px;
     text-align: center;
-    padding: 0 10px
+    padding: 0 10px;
+    @include forMobile {
+        z-index: 10;
+        padding-left: 0;
+    }
 }
 
 .headerTitle {
@@ -45,5 +49,10 @@ header {
             opacity: 0.5;
             transition:all 200ms ease-in-out;
         }
+    }
+    @include forMobile {
+        position: absolute;
+        top: 0px;
+        right: 05px;
     }
 }

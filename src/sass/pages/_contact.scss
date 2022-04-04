@@ -54,4 +54,22 @@
             border-radius: 40px;
         }
     }
+    @include forMobile {
+        width: 90%;
+        &_names {
+            flex-direction: column;
+            &_input {
+                width: 100%;
+                &:first-child {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        &_email {
+            width: 100%;
+        }
+        &_separator {
+            width: 100%;
+        }
+    }
 }

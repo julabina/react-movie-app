@@ -1,10 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
         <footer>
-           <p>© - Seriescope</p>
+           <Link className='footer-homeLink' to="/">© - Seriescope</Link>
            <div className="footerInfos">
                <NavLink className={({isActive}) => {
                    return isActive ? "footerInfos_toContact" : "footerInfos_toContact";

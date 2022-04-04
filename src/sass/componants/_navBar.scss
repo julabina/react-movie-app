@@ -23,6 +23,45 @@
             }
         }
     }
+    @include forMobile {
+        display: none;
+        position: fixed;
+        top: 0;left: 0;
+        flex-direction: column;
+        height: 305px;
+        width: 200px;
+        z-index: 10;
+        background: map-get($map: $colors, $key: primary);
+        border-right: 5px double black;
+        border-bottom: 5px double black;
+        &_linkCont {
+            border-bottom: 1px solid black;
+            margin-right: initial;
+            height: 100px;
+            &:last-child {
+                border-bottom: 1px solid transparent;
+            }
+            &_link { 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100px;
+            }
+        }
+        &--active {
+            display: block;
+        }
+    }
+}
+
+.hambMenu {
+    position: absolute;
+    display: none;
+    top: 5px;left: 5px;
+    height: 30px;
+    @include forMobile {
+        display: block;
+    }
 }
 
 .movieNavBar, .tvNavBar {
@@ -50,6 +89,10 @@
     background: map-get($map: $colors, $key: secondary);
     padding-left: 15px;
     color: #f3f3f3;
+    @include forMobile {
+        height: 60px;
+        font-size: 0.8em;
+    }
 }
 
 
