@@ -7,28 +7,28 @@ const TvHome = () => {
 
     const [inputValue, setInputValue] = useState("");
     const [searchValue, setSearchValue] = useState("");
-    const [datasTvSearch, setDatasTvSearch] = useState([]);
+    const [dataTvSearch, setDataTvSearch] = useState([]);
 
     useEffect(() => {
 
         console.log(searchValue);
             fetch('https://api.themoviedb.org/3/search/tv?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&query=' + searchValue + '&page=1&include_adult=false')
             .then(res => res.json())
-            .then(datas => {
-                if (datas.results) {
+            .then(data => {
+                if (data.results) {
                     let arr = [];
                     let item;
-                    for (let i = 0;i < datas.results.length;i++) {
+                    for (let i = 0;i < data.results.length;i++) {
                         item = {
-                            title : datas.results[i].name,
+                            title : data.results[i].name,
                             id: uuidv4(),
-                            poster: datas.results[i].poster_path,
-                            tvId: datas.results[i].id,
-                            overview : datas.results[i].overview
+                            poster: data.results[i].poster_path,
+                            tvId: data.results[i].id,
+                            overview : data.results[i].overview
                         }
                         arr.push(item)
                     }
-                    setDatasTvSearch(arr); 
+                    setDataTvSearch(arr); 
                 }
             })     
     },[searchValue])
@@ -53,7 +53,7 @@ const TvHome = () => {
             </form>  
             {}
             <ul>
-                {datasTvSearch.map((el) => {
+                {dataTvSearch.map((el) => {
                     return  <TvCard title={el.title} key={el.id} id={el.id} poster={el.poster} overview={el.overview} tvId={el.tvId} fromHome={true} />
                 })}
             </ul>

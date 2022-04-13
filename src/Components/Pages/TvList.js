@@ -5,28 +5,28 @@ import TvNavBar from '../AppComponents/TvNavBar';
 
 const TvList = () => {
 
-    const [tvDatasList, setTvDatasList] = useState([]);
+    const [tvDataList, setTvDataList] = useState([]);
     const [tvListOption, setTvListOption] = useState(["release_date", "desc", 1]);
     const [totalPages, setTotalPages] = useState();
 
     useEffect(() => {
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&without_genres=16&sort_by=' + tvListOption[0] + '.' + tvListOption[1] + '&page=' + tvListOption[2] + '&vote_count.gte=1000&include_null_first_air_dates=false')
         .then(res => res.json())
-        .then(datas => {
+        .then(data => {
             let arr = [];
             let item;
-            for (let i = 0; i < datas.results.length;i++) {
+            for (let i = 0; i < data.results.length;i++) {
                 item = {
-                    title : datas.results[i].name,
-                    poster : datas.results[i].poster_path,
-                    overview : datas.results[i].overview,
+                    title : data.results[i].name,
+                    poster : data.results[i].poster_path,
+                    overview : data.results[i].overview,
                     id: uuidv4(),
-                    tvId : datas.results[i].id
+                    tvId : data.results[i].id
                 };
                 arr.push(item)
             }
-            setTotalPages(datas.total_pages);
-            setTvDatasList(arr);
+            setTotalPages(data.total_pages);
+            setTvDataList(arr);
         })
     },[tvListOption])
 
@@ -79,7 +79,7 @@ const TvList = () => {
                     </select> 
                 </section>
             <ul>
-                {tvDatasList.map((el) => {
+                {tvDataList.map((el) => {
                 return  <TvCard title={el.title} key={el.id} id={el.id} poster={el.poster} overview={el.overview} tvId={el.tvId} />
                 })}   
             </ul>

@@ -18,6 +18,7 @@ import Footer from "./Components/Layout/Footer";
 import ModalAbout from "./Components/AppComponents/ModalAbout";
 import Contact from "./Components/Pages/Contact";
 import ToTop from "./Components/AppComponents/ToTop";
+import Person from "./Components/Pages/Person";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/tv/popular" element={<TvPopular />} />
         <Route path="/tv/ref_=:id" element={<Tv />} />
         <Route path="/tv/ref_=:id/s:sa" element={<TvSeason />} />
+        <Route path="/person/:id" element={<Person />} />
         <Route path="/contact" element={<Contact />} />
         <Route path='*' element={<NotFound />} />
       </Routes>

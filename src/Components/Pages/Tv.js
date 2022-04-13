@@ -8,63 +8,63 @@ const Tv = () => {
 
     const params = useParams();
 
-    const [datasTvShow, setDatasTvShow] = useState([]);
-    const [seasonDatas, setSeasonDatas] = useState([]);
+    const [dataTvShow, setDataTvShow] = useState([]);
+    const [seasonData, setSeasonData] = useState([]);
     const [tvBDrop, setTvBDrop] = useState();
 
     useEffect(() => {
         fetch('https://api.themoviedb.org/3/tv/' + params.id + '?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR')
         .then(res => res.json())
-        .then(datas => {
+        .then(data => {
             let tvGenres = [];
             let creators = [];
             let originCountry = [];
             let seas = [];
             let seasonItem;
             let count = 0;
-            for (let i = 0; i < datas.genres.length;i++) {
-                tvGenres.push(datas.genres[i].name + " ");
+            for (let i = 0; i < data.genres.length;i++) {
+                tvGenres.push(data.genres[i].name + " ");
             }
-            for (let i = 0; i < datas.created_by.length;i++) {
-                (i === 0) ? creators.push(datas.created_by[i].name) : creators.push(', ' + datas.created_by[i].name);     
+            for (let i = 0; i < data.created_by.length;i++) {
+                (i === 0) ? creators.push(data.created_by[i].name) : creators.push(', ' + data.created_by[i].name);     
             }
             if (creators[0] === undefined) {
                 creators = undefined 
             } 
-            for (let i = 0; i < datas.origin_country.length;i++) {
-                (i === 0) ? originCountry.push(datas.origin_country[i]) : originCountry.push(', ' + datas.origin_country[i]);     
+            for (let i = 0; i < data.origin_country.length;i++) {
+                (i === 0) ? originCountry.push(data.origin_country[i]) : originCountry.push(', ' + data.origin_country[i]);     
             }
-            for (let i = 0; i < datas.seasons.length;i++) {
-                if (datas.seasons[i].name !== "Épisodes spéciaux") {
+            for (let i = 0; i < data.seasons.length;i++) {
+                if (data.seasons[i].name !== "Épisodes spéciaux") {
                     count++;
                     seasonItem = {
-                        serieId : datas.id,
+                        serieId : data.id,
                         id : uuidv4(),
-                        name: datas.seasons[i].name,
-                        airDate : datas.seasons[i].air_date,
-                        overview: datas.seasons[i].overview,
-                        poster: "https://image.tmdb.org/t/p/w200" + datas.seasons[i].poster_path,
+                        name: data.seasons[i].name,
+                        airDate : data.seasons[i].air_date,
+                        overview: data.seasons[i].overview,
+                        poster: "https://image.tmdb.org/t/p/w200" + data.seasons[i].poster_path,
                         season : count
                     };
                     seas.push(seasonItem);
                 }
             }
             let item = {
-                title : datas.name,
+                title : data.name,
                 createdBy : creators,
-                firstDiff : datas.first_air_date,
+                firstDiff : data.first_air_date,
                 genres : tvGenres,
                 origin : originCountry,
-                networks : datas.networks,
-                inProd : datas.in_production,
-                status : datas.status,
-                overview : datas.overview,
-                poster: "https://image.tmdb.org/t/p/w300" + datas.poster_path,
-                vote: datas.vote_average
+                networks : data.networks,
+                inProd : data.in_production,
+                status : data.status,
+                overview : data.overview,
+                poster: "https://image.tmdb.org/t/p/w300" + data.poster_path,
+                vote: data.vote_average
             }
-            setSeasonDatas(seas);
-            setTvBDrop("https://image.tmdb.org/t/p/original" + datas.backdrop_path);
-            setDatasTvShow(item);
+            setSeasonData(seas);
+            setTvBDrop("https://image.tmdb.org/t/p/original" + data.backdrop_path);
+            setDataTvShow(item);
         })
     },[])
 
@@ -76,34 +76,34 @@ const Tv = () => {
             }} >
                 <div className="tvBackdrop_container">
                     <div className="tvBackdrop_container_poster">
-                        <img src={datasTvShow.poster} alt={'Affiche de la serie '  + datasTvShow.title} />
+                        <img src={dataTvShow.poster} alt={'Affiche de la serie '  + dataTvShow.title} />
                     </div>
                     <div className="tvBackdrop_container_infos">
                         <div className="tvBackdrop_container_infos_top">
-                            <h1>{datasTvShow.title}</h1>
-                            {(datasTvShow.createdBy !== undefined) && <p>Une serie de {datasTvShow.createdBy}</p>}
+                            <h1>{dataTvShow.title}</h1>
+                            {(dataTvShow.createdBy !== undefined) && <p>Une serie de {dataTvShow.createdBy}</p>}
                         </div>
                         <div className="tvBackdrop_container_infos_bottom">
                             <div className="tvBackdrop_container_infos_bottom_left">
-                                <p className="tvBackdrop_container_infos_bottom_left_origin">{datasTvShow.origin} -</p>
-                                <p className="tvBackdrop_container_infos_bottom_left_genres">{datasTvShow.genres}</p>
+                                <p className="tvBackdrop_container_infos_bottom_left_origin">{dataTvShow.origin} -</p>
+                                <p className="tvBackdrop_container_infos_bottom_left_genres">{dataTvShow.genres}</p>
                             </div>
-                            <p className="tvBackdrop_container_infos_bottom_note">{datasTvShow.vote}</p>
+                            <p className="tvBackdrop_container_infos_bottom_note">{dataTvShow.vote}</p>
                         </div>
                     </div>
                 </div>
             </section>
             <section className="tvInfosContainer">
                 <div className="tvInfosContainer_release">
-                    <p>1ere diffusion : <span>{datasTvShow.firstDiff}</span></p>
+                    <p>1ere diffusion : <span>{dataTvShow.firstDiff}</span></p>
                 </div>
                 <div className="tvInfosContainer_overview">
                     <div className="tvInfosContainer_overview_header"><p className='tvInfosContainer_overview_header_title'>Synopsis</p></div>
-                    <p className='tvInfosContainer_overview_txt'>{datasTvShow.overview}</p>
+                    <p className='tvInfosContainer_overview_txt'>{dataTvShow.overview}</p>
                 </div>
             </section>
             <ul className='seasonList'>
-                {seasonDatas.map((el) => {
+                {seasonData.map((el) => {
                     return (
                      <TvSeason name={el.name} id={el.id} key={el.id} serieId={el.serieId} diff={el.airDiff} overview={el.overview} poster={el.poster} season={el.season} />
                     )

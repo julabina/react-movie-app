@@ -13,19 +13,19 @@ const Movie = () => {
             fetch('https://api.themoviedb.org/3/movie/' + params.id + '?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR').then(res => res.json()),
             fetch('https://api.themoviedb.org/3/movie/' + params.id + '/credits?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR').then(res => res.json())
         ])
-        .then(datas => {
+        .then(data => {
             let director;
             let movieGenre = [];
-            console.log(datas[0]);
-            for (let i = 0;i < datas[1].crew.length;i++) {
-                if (datas[1].crew[i].job === "Director") {
-                    director = datas[1].crew[i].name;
+            console.log(data[0]);
+            for (let i = 0;i < data[1].crew.length;i++) {
+                if (data[1].crew[i].job === "Director") {
+                    director = data[1].crew[i].name;
                 }
             }
-            for (let i = 0; i < datas[0].genres.length;i++) {
-                movieGenre.push(datas[0].genres[i].name + " ");
+            for (let i = 0; i < data[0].genres.length;i++) {
+                movieGenre.push(data[0].genres[i].name + " ");
             }
-            let runtime = datas[0].runtime;
+            let runtime = data[0].runtime;
             let h = Math.floor(runtime / 60);
             let m = Math.floor(runtime % 60);
             if (m.length === 1) {
@@ -36,14 +36,14 @@ const Movie = () => {
             let item = {
                     genres : movieGenre,
                     runtime : movieTime ,
-                    title : datas[0].title,
-                    overview : datas[0].overview,
-                    poster : "https://image.tmdb.org/t/p/w300" + datas[0].poster_path,
-                    release : datas[0].release_date,
-                    vote : datas[0].vote_average,
+                    title : data[0].title,
+                    overview : data[0].overview,
+                    poster : "https://image.tmdb.org/t/p/w300" + data[0].poster_path,
+                    release : data[0].release_date,
+                    vote : data[0].vote_average,
                     movieDirector : director
             }
-            setBDrop("https://image.tmdb.org/t/p/original" + datas[0].backdrop_path);
+            setBDrop("https://image.tmdb.org/t/p/original" + data[0].backdrop_path);
             setMovieData(item);
         })
     },[])

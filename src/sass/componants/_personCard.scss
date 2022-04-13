@@ -1,0 +1,79 @@
+.personCard {
+    display: flex;
+    width: 800px;
+    height: 300px;
+    margin-top: 20px;
+    box-sizing: content-box;
+    border-radius: 3px;
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 300ms ease-in-out;
+    &_poster {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: map-get($map: $colors, $key: tertiary );
+        min-width: 200px;
+        max-width: 200px;
+        &_noImg p {
+            display: flex;
+            justify-content: center;
+            width: 200px;height: auto;
+            color: #f3f3f3;
+        }
+    }
+    &_infos {
+        padding: 15px;
+        width: 100%;
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 0.7em;
+            margin-bottom: 15px;
+        }
+        p {
+            height: 80%;
+            line-height: 1.4;
+            text-indent: 30px;
+            overflow: scroll;
+        }
+    }
+    &:hover {
+        transform: scale(1.03);
+        transition: transform 300ms ease-in-out;
+    }
+    @include forTablet {
+        &:hover {
+            transform: scale(1);
+        }
+    }
+    @include forMobile {
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        &_poster {
+            height: 300px;
+            max-width: 200px;
+            min-width: 200px;
+            background: transparent;
+            margin-top: 10px;
+            &_noImg p {
+                color: #000;
+            }
+            img {
+                object-fit: cover;
+                height: 300px;
+                width: 200px;
+            }
+        }
+        &_infos {
+            p {
+                overflow: hidden;
+                height: auto;
+                max-height: 312px;
+            }
+        }
+    }
+}

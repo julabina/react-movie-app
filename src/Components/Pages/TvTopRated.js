@@ -12,20 +12,20 @@ const TvTopRated = () => {
     useEffect(() => {
         fetch('https://api.themoviedb.org/3/tv/top_rated?api_key=' + process.env.REACT_APP_API_KEY + '&page=' + changePageTopRated + '&language=fr-FR')
         .then(res => res.json())
-        .then(datas => {
+        .then(data => {
             let arr = [];
             let item;
-            for (let i = 0; i < datas.results.length;i++) {
+            for (let i = 0; i < data.results.length;i++) {
                 item = {
-                    title : datas.results[i].name,
-                    poster : datas.results[i].poster_path,
-                    overview : datas.results[i].overview,
+                    title : data.results[i].name,
+                    poster : data.results[i].poster_path,
+                    overview : data.results[i].overview,
                     id: uuidv4(),
-                    tvId : datas.results[i].id
+                    tvId : data.results[i].id
                 };
                 arr.push(item);
             }
-            setTotalPages(datas.total_pages);
+            setTotalPages(data.total_pages);
             setDataTvTopRated(arr);
         })
     },[changePageTopRated])
