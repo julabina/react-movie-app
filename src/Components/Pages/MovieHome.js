@@ -8,11 +8,12 @@ const MovieHome = () => {
     const [inputValue, setInputValue] = useState("");
     const [searchValue, setSearchValue] = useState("");
     const [dataMovieSearch, setDataMovieSearch] = useState([]);
+    const [actualPage, setActualPage] = useState(0);
+    const [totalPages, setTotalPages] = useState();
 
     useEffect(() => {
-
-        console.log(searchValue);
-            fetch('https://api.themoviedb.org/3/search/movie?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&query=' + searchValue + '&page=1&include_adult=false')
+        if (actualPage > 0) {
+            fetch('https://api.themoviedb.org/3/search/movie?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&query=' + searchValue + '&page=' + actualPage + '&include_adult=false')
             .then(res => res.json())
             .then(data => {
                 if (data.results) {
@@ -29,15 +30,28 @@ const MovieHome = () => {
                         }
                         arr.push(item)
                     }
+                    setTotalPages(data.total_pages)
                     setDataMovieSearch(arr); 
                 }
             })     
-    },[searchValue])
+        }
+    },[searchValue, actualPage])
 
     const searchMovie = (e) => {
         e.preventDefault();
+        setActualPage(1);
         setSearchValue(inputValue);
         setInputValue("");
+    }
+
+    const changePage = (val) => {
+        let numb = actualPage;
+        numb = numb + val; 
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth'
+        });
+        setActualPage(numb);
     }
 
     return (
@@ -57,6 +71,15 @@ const MovieHome = () => {
                     return  <MovieCard title={el.title} key={el.id} id={el.id} release={el.release} poster={el.img} overview={el.overview} movieId={el.movieId} fromHome={true} />
                 })}
             </ul>
+            {dataMovieSearch.length > 0 && 
+                <section className="movieList_pagesBtn">
+                    {(actualPage !== 1) && <button onClick={() => changePage(-1)} className='movieList_pagesBtn_btn'>{actualPage - 1}</button>}
+                    <button className='movieList_pagesBtn_btn movieList_pagesBtn_btn--active'>{actualPage}</button>             
+                    {(actualPage <  totalPages) && <button onClick={() => changePage(1)} className='movieList_pagesBtn_btn'>{actualPage + 1}</button>}
+                    {(actualPage < (totalPages - 1) ) && <button onClick={() => changePage(2)} className='movieList_pagesBtn_btn'>{actualPage + 2}</button>}
+                    {(actualPage < (totalPages - 2) ) && <button onClick={() => changePage(3)} className='movieList_pagesBtn_btn'>{actualPage + 3}</button>}            
+                </section>
+            }
         </main>
     );
 };

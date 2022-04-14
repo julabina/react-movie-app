@@ -9,11 +9,14 @@ const Home = () => {
 
     const [searchData, setSearchData] = useState([]);
     const [inputValue, setInputValue] = useState("");
-    const [searchValue, setSearchValue] = useState("")
+    const [searchValue, setSearchValue] = useState("");
+    const [actualPage, setActualPage] = useState(0);
+    const [totalPages, setTotalPages] = useState();
 
     useEffect(() => {
-        if (searchValue !== "") {
-            fetch('https://api.themoviedb.org/3/search/multi?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&query=' + searchValue + '&page=1&include_adult=false')
+        console.log("1");
+        if (actualPage > 0) {
+            fetch('https://api.themoviedb.org/3/search/multi?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&query=' + searchValue + '&page=' + actualPage + '&include_adult=false')
             .then(res => res.json())
             .then(data => {
                 if (data.results) {
@@ -30,7 +33,6 @@ const Home = () => {
                                 overview : data.results[i].overview
                             }
                         } else if (data.results[i].media_type === "movie") {
-                            console.log("movie");
                             item = {
                                 type : data.results[i].media_type,
                                 title : data.results[i].title,
@@ -53,16 +55,28 @@ const Home = () => {
                         
                         arr.push(item);
                     }
+                    setTotalPages(data.total_pages);
                     setSearchData(arr);
                 }
             })
         }
-    },[searchValue])
+    },[actualPage, searchValue])
 
     const searchGlobal = (e) => {
         e.preventDefault();
+        setActualPage(1);
         setSearchValue(inputValue);
         setInputValue("");
+    }
+
+    const changePage = (val) => {
+        let numb = actualPage;
+        numb = numb + val; 
+        window.scrollTo({
+            top:0,
+            behavior: 'smooth'
+        });
+        setActualPage(numb);
     }
 
     return (
@@ -73,6 +87,9 @@ const Home = () => {
                 </NavLink>
                 <NavLink to="/tv">
                     <div className="home_linkContainer_link">SERIES TV</div>
+                </NavLink>
+                <NavLink to="/person">
+                    <div className="home_linkContainer_link">PEOPLES</div>
                 </NavLink>
             </section>
             <form className='home_search' onSubmit={searchGlobal}>
@@ -93,6 +110,15 @@ const Home = () => {
                     }
                 })}
             </ul>
+            {searchData.length > 0 && 
+                <section className="movieList_pagesBtn">
+                    {(actualPage !== 1) && <button onClick={() => changePage(-1)} className='movieList_pagesBtn_btn'>{actualPage - 1}</button>}
+                    <button className='movieList_pagesBtn_btn movieList_pagesBtn_btn--active'>{actualPage}</button>             
+                    {(actualPage <  totalPages) && <button onClick={() => changePage(1)} className='movieList_pagesBtn_btn'>{actualPage + 1}</button>}
+                    {(actualPage < (totalPages - 1) ) && <button onClick={() => changePage(2)} className='movieList_pagesBtn_btn'>{actualPage + 2}</button>}
+                    {(actualPage < (totalPages - 2) ) && <button onClick={() => changePage(3)} className='movieList_pagesBtn_btn'>{actualPage + 3}</button>}            
+                </section>
+            }
         </main>
     );
 };

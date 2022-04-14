@@ -10,15 +10,14 @@ const TvSeason = (props) => {
     useEffect (() => {
     fetch('https://api.themoviedb.org/3/tv/' + props.serieId + '/season/' + props.season + '?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR')
     .then(res => res.json())
-    .then(datas => {
-        console.log(datas);
+    .then(data => {
         let item ;
         let arr = [];
-        for (let i = 0; i < datas.episodes.length;i++) {
+        for (let i = 0; i < data.episodes.length;i++) {
             item = {
                 serieId : props.serieId,
                 season : props.season,
-                episodeNumber : datas.episodes[i].episode_number,
+                episodeNumber : data.episodes[i].episode_number,
                 id : uuidv4()
             }
             arr.push(item);

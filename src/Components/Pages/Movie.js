@@ -16,7 +16,6 @@ const Movie = () => {
         .then(data => {
             let director;
             let movieGenre = [];
-            console.log(data[0]);
             for (let i = 0;i < data[1].crew.length;i++) {
                 if (data[1].crew[i].job === "Director") {
                     director = data[1].crew[i].name;
