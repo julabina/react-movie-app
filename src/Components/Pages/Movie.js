@@ -14,6 +14,7 @@ const Movie = () => {
             fetch('https://api.themoviedb.org/3/movie/' + params.id + '/credits?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR').then(res => res.json())
         ])
         .then(data => {
+            console.log(data);
             let director;
             let movieGenre = [];
             for (let i = 0;i < data[1].crew.length;i++) {

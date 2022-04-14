@@ -10,7 +10,6 @@ const Person = () => {
         fetch('https://api.themoviedb.org/3/person/' + params.id + '?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR')
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             let role = '';
             if(data.known_for_department === "Acting") {
                 if (data.gender === 1) {

@@ -14,7 +14,6 @@ const Home = () => {
     const [totalPages, setTotalPages] = useState();
 
     useEffect(() => {
-        console.log("1");
         if (actualPage > 0) {
             fetch('https://api.themoviedb.org/3/search/multi?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&query=' + searchValue + '&page=' + actualPage + '&include_adult=false')
             .then(res => res.json())
@@ -88,7 +87,7 @@ const Home = () => {
                 <NavLink to="/tv">
                     <div className="home_linkContainer_link">SERIES TV</div>
                 </NavLink>
-                <NavLink to="/person">
+                <NavLink to="/person/all">
                     <div className="home_linkContainer_link">PEOPLES</div>
                 </NavLink>
             </section>
