@@ -115,6 +115,18 @@
         background: map-get($colors, neutral);
         margin-bottom: 40px;
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.163);
+        &_collection {
+            margin-top: 15px;
+            &_link {
+                margin-top: 3px;
+                color: map-get($map: $colors, $key:secondary );
+                transition: opacity 150ms ease-in-out;
+                &:hover {
+                    opacity: 0.7;
+                    transition: opacity 150ms ease-in-out;
+                }
+            }
+        }
     }
     &_overview {
         width: 760px;

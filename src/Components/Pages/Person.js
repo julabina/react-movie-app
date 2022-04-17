@@ -50,7 +50,7 @@ const Person = () => {
                 </div>
             </section>
             <section className="person_bio">
-                {personData.bio}
+                <p>{personData.bio}</p>
             </section>
         </main>
     );

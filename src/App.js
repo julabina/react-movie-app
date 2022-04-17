@@ -20,6 +20,7 @@ import Contact from "./Components/Pages/Contact";
 import ToTop from "./Components/AppComponents/ToTop";
 import Person from "./Components/Pages/Person";
 import PersonList from "./Components/Pages/PersonList";
+import Saga from "./Components/Pages/Saga";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/tv/ref_=:id/s:sa" element={<TvSeason />} />
         <Route path="/person/all" element={<PersonList />} /> 
         <Route path="/person/ref_=:id" element={<Person />} />
+        <Route path="/collection/ref_=:id" element={<Saga />} />
         <Route path="/contact" element={<Contact />} />
         <Route path='*' element={<NotFound />} />
       </Routes>

@@ -1161,6 +1161,18 @@ footer {
   margin-bottom: 40px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.163);
 }
+.movieInfosContainer_release_collection {
+  margin-top: 15px;
+}
+.movieInfosContainer_release_collection_link {
+  margin-top: 3px;
+  color: #003166;
+  transition: opacity 150ms ease-in-out;
+}
+.movieInfosContainer_release_collection_link:hover {
+  opacity: 0.7;
+  transition: opacity 150ms ease-in-out;
+}
 .movieInfosContainer_overview {
   width: 760px;
   margin: 40px 0 40px 40px;
@@ -1562,6 +1574,84 @@ footer {
 .personList_title {
   font-size: 3.2em;
   margin: 40px 0 20px 0;
+}
+
+.saga_parts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+.saga_parts_tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 1100px;
+}
+.saga_parts_tabs_tab {
+  margin: 5px;
+  min-width: 100px;
+  max-width: 100px;
+  height: 150px;
+  cursor: pointer;
+  background: #333;
+  transition: transform 150ms ease-in-out;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.267);
+}
+.saga_parts_tabs_tab img {
+  height: 150px;
+}
+.saga_parts_tabs_tab:hover {
+  transform: scale(1.05);
+  transition: transform 150ms ease-in-out;
+}
+.saga_parts_tabs_tab--active {
+  border: 2px solid red;
+}
+.saga_parts_infos {
+  width: 1100px;
+  padding: 40px;
+  margin: 60px 0 30px 0;
+  background: #EBEBEB;
+  border-radius: 5px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.164);
+}
+.saga_parts_infos_top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.saga_parts_infos_top_left h3 {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.saga_parts_infos_top_left_release {
+  font-size: 0.8em;
+}
+.saga_parts_infos_top_vote {
+  font-size: 3em;
+}
+.saga_parts_infos_overview {
+  line-height: 1.4;
+  letter-spacing: 0.7px;
+  text-indent: 40px;
+}
+.saga_parts_infos_bot {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.saga_parts_infos_bot_movieBtn {
+  height: 35px;
+  padding: 0 10px;
+  border-radius: 35px;
+  border: 3px solid #333;
+  background: #f3f3f3;
+  cursor: pointer;
+}
+.saga_parts_infos_bot_movieBtn:hover {
+  opacity: 0.8;
 }
 
 .contactCont {

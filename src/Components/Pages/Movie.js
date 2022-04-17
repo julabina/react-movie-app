@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import MovieNavBar from '../AppComponents/MovieNavBar';
 
 const Movie = () => {
@@ -14,7 +14,6 @@ const Movie = () => {
             fetch('https://api.themoviedb.org/3/movie/' + params.id + '/credits?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR').then(res => res.json())
         ])
         .then(data => {
-            console.log(data);
             let director;
             let movieGenre = [];
             for (let i = 0;i < data[1].crew.length;i++) {
@@ -32,6 +31,12 @@ const Movie = () => {
                 m = "0" + m; 
             }
            let movieTime = h + "h" + m;
+           let collection = null,
+           collectionId;
+           if (data[0].belongs_to_collection !== null) {
+                collection = data[0].belongs_to_collection.name;
+                collectionId = data[0].belongs_to_collection.id;
+           }
 
             let item = {
                     genres : movieGenre,
@@ -41,7 +46,9 @@ const Movie = () => {
                     poster : "https://image.tmdb.org/t/p/w300" + data[0].poster_path,
                     release : data[0].release_date,
                     vote : data[0].vote_average,
-                    movieDirector : director
+                    movieDirector : director,
+                    collection: collection,
+                    collectionId: collectionId
             }
             setBDrop("https://image.tmdb.org/t/p/original" + data[0].backdrop_path);
             setMovieData(item);
@@ -75,7 +82,15 @@ const Movie = () => {
             </section>
             <section className="movieInfosContainer">
                 <div className="movieInfosContainer_release">
-                    <p>Date de sortie : <span>{movieData.release}</span></p>
+                    <div>
+                        <p>Date de sortie : <span>{movieData.release}</span></p>
+                        {movieData.collection !== null && 
+                        <div className="movieInfosContainer_release_collection">
+                            <p>Collection :</p>
+                            <Link to={'/collection/ref_=' + movieData.collectionId}><p className='movieInfosContainer_release_collection_link'>{movieData.collection}</p></Link>
+                        </div>
+                        }
+                    </div>
                 </div>
                 <div className="movieInfosContainer_overview">
                     <div className="movieInfosContainer_overview_header"><p className='movieInfosContainer_overview_header_title'>Synopsis</p></div>

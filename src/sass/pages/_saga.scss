@@ -1,0 +1,81 @@
+.saga {
+    &_parts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 200px;
+        &_tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 1100px;
+            &_tab {
+                margin: 5px;
+                min-width: 100px;
+                max-width: 100px;
+                height: 150px;
+                cursor: pointer;
+                background: map-get($colors, tertiary);
+                transition: transform 150ms ease-in-out;
+                box-shadow:  0 7px 15px rgba(0, 0, 0, 0.267);
+                img {
+                    height:  150px;
+                }
+                &:hover {
+                    transform: scale(1.05);
+                    transition: transform 150ms ease-in-out;
+                }
+                &--active {
+                    border: 2px solid red;
+                }
+            }
+        }
+        &_infos {
+            width: 1100px;
+            padding: 40px;
+            margin: 60px 0 30px 0;
+            background: map-get($colors, neutral);
+            border-radius: 5px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.164);
+            &_top {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 25px;
+                &_left {
+                    h3 {
+                        font-size: 1.3em;
+                        font-weight: 600;
+                        margin-bottom: 7px;
+                    }
+                    &_release {
+                        font-size: 0.8em;
+                    }
+                }
+                &_vote {
+                    font-size: 3em;
+                }
+            }
+            &_overview {
+                line-height: 1.4;
+                letter-spacing: 0.7px;
+                text-indent: 40px;
+            }
+            &_bot {
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+                &_movieBtn {
+                    height: 35px;
+                    padding: 0 10px;
+                    border-radius: 35px;
+                    border: 3px solid #333;
+                    background: #f3f3f3;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+}
