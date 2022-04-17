@@ -12,8 +12,7 @@ const TvHome = () => {
     const [totalPages, setTotalPages] = useState();
 
     useEffect(() => {
-
-        console.log(searchValue);
+        if (actualPage > 0) {
             fetch('https://api.themoviedb.org/3/search/tv?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&query=' + searchValue + '&page=' + actualPage + '&include_adult=false')
             .then(res => res.json())
             .then(data => {
@@ -33,7 +32,8 @@ const TvHome = () => {
                     setTotalPages(data.total_pages);
                     setDataTvSearch(arr); 
                 }
-            })     
+            })   
+        }  
     },[searchValue, actualPage])
 
     const searchTv = (e) => {

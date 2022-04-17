@@ -18,6 +18,7 @@
                 background: map-get($colors, tertiary);
                 transition: transform 150ms ease-in-out;
                 box-shadow:  0 7px 15px rgba(0, 0, 0, 0.267);
+                overflow: hidden;
                 img {
                     height:  150px;
                 }

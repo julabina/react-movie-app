@@ -91,6 +91,7 @@ const Home = () => {
                     <div className="home_linkContainer_link">PEOPLES</div>
                 </NavLink>
             </section>
+            <div className="home_separator"></div>
             <form className='home_search' onSubmit={searchGlobal}>
                 <label htmlFor='search'>
                     rechercher un film, une serie ou une personnalité

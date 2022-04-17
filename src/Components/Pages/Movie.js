@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import MovieNavBar from '../AppComponents/MovieNavBar';
+import { v4 as uuidv4 } from 'uuid';
 
 const Movie = () => {
 
     const params = useParams();
     const [movieData, setMovieData] = useState({});
     const [bDrop, setBDrop] = useState();
+    const [castData, setCastData] = useState([]);
+    const [toggleCastAll, setToggleCastAll] = useState(false);
 
     useEffect(() => {
         Promise.all ([
@@ -14,6 +17,7 @@ const Movie = () => {
             fetch('https://api.themoviedb.org/3/movie/' + params.id + '/credits?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR').then(res => res.json())
         ])
         .then(data => {
+            console.log(data[1]);
             let director;
             let movieGenre = [];
             for (let i = 0;i < data[1].crew.length;i++) {
@@ -50,10 +54,27 @@ const Movie = () => {
                     collection: collection,
                     collectionId: collectionId
             }
+            let castArr = [];
+            for(let i = 0; i < data[1].cast.length; i++) {
+                let casts = {
+                    castName : data[1].cast[i].name,
+                    character: data[1].cast[i].character,
+                    peopleId: data[1].cast[i].id,
+                    profile: "https://image.tmdb.org/t/p/w200" + data[1].cast[i].profile_path,
+                    id: uuidv4(),
+                    order : data[1].cast[i].order
+                };
+                castArr.push(casts);
+            }
             setBDrop("https://image.tmdb.org/t/p/original" + data[0].backdrop_path);
             setMovieData(item);
+            setCastData(castArr);
         })
-    },[])
+    },[]);
+
+    const toggleCast = () => {
+        setToggleCastAll(!toggleCastAll);
+    }
     
     return (
         <main>
@@ -95,6 +116,43 @@ const Movie = () => {
                 <div className="movieInfosContainer_overview">
                     <div className="movieInfosContainer_overview_header"><p className='movieInfosContainer_overview_header_title'>Synopsis</p></div>
                     <p className='movieInfosContainer_overview_txt'>{movieData.overview}</p>
+                </div>
+            </section>
+            <section className='castSection'>
+                <div className="castSection_container">
+                {castData.map(el => {
+                    if (toggleCastAll) {
+                            return <Link to={'/person/ref_=' + el.peopleId} className="castSection_container_casting" key={el.id}>
+                                        <div className="castSection_container_casting_img">
+                                            <img src={el.profile} alt={'photo de ' + el.castName} />
+                                        </div>
+                                        <div className="castSection_container_casting_infos">
+                                            <h3>{el.castName}</h3>
+                                            <h4>{el.character}</h4>
+                                        </div>
+                                    </Link>
+                    } else {
+                        if (el.order < 8) {
+                            return <Link to={'/person/ref_=' + el.peopleId} className="castSection_container_casting" key={el.id}>
+                                        <div className="castSection_container_casting_img">
+                                            <img src={el.profile} alt={'photo de ' + el.castName} />
+                                        </div>
+                                        <div className="castSection_container_casting_infos">
+                                            <h3>{el.castName}</h3>
+                                            <h4>{el.character}</h4>
+                                        </div>
+                                    </Link>
+                        }
+                    }
+                })}
+                </div>
+                <div className="castSection_container_btnCont">
+                    {
+                        toggleCastAll ? 
+                        <button onClick={toggleCast} className='castSection_container_btnCont_btn'>Voir moins</button>
+                        :
+                        <button onClick={toggleCast} className='castSection_container_btnCont_btn'>Tout voir</button>
+                    }
                 </div>
             </section>
         </main>

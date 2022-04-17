@@ -15,7 +15,6 @@ const Saga = () => {
         fetch('https://api.themoviedb.org/3/collection/' + params.id + '?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 let arr = [];
                 let item = {
                     sagaName: data.name,

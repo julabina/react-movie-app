@@ -55,4 +55,9 @@
          }
       }
   }
+  &_separator {
+   width: 800px;
+   border-bottom: 1px solid rgba(128, 128, 128, 0.247);
+   margin : 30px 0 20px 0;
+  }
 }
