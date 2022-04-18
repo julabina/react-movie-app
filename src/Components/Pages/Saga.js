@@ -71,7 +71,7 @@ const Saga = () => {
                     <div className="movieBackdrop_container_poster">
                         <img src={dataSaga.poster} alt={'affiche du film ' + dataSaga.sagaName} />
                     </div>
-                    <div className="movieBackdrop_container_infos">
+                    <div className="movieBackdrop_container_infos saga_infos">
                         <div className="movieBackdrop_container_infos_top">
                             <h2>{dataSaga.sagaName}</h2>
                         </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import MovieNavBar from '../AppComponents/MovieNavBar';
 import { v4 as uuidv4 } from 'uuid';
+import MovieCard from '../AppComponents/MovieCard';
 
 const Movie = () => {
 
@@ -10,13 +11,16 @@ const Movie = () => {
     const [bDrop, setBDrop] = useState();
     const [castData, setCastData] = useState([]);
     const [toggleCastAll, setToggleCastAll] = useState(false);
+    const [similarData, setSimilarData] = useState([]);
 
     useEffect(() => {
         Promise.all ([
             fetch('https://api.themoviedb.org/3/movie/' + params.id + '?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR').then(res => res.json()),
-            fetch('https://api.themoviedb.org/3/movie/' + params.id + '/credits?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR').then(res => res.json())
+            fetch('https://api.themoviedb.org/3/movie/' + params.id + '/credits?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR').then(res => res.json()),
+            fetch('https://api.themoviedb.org/3/movie/' + params.id + '/similar?api_key=' + process.env.REACT_APP_API_KEY + '&page=1&language=fr-FR').then(res => res.json())
         ])
         .then(data => {
+            console.log(data[2]);
             let director;
             let movieGenre = [];
             for (let i = 0;i < data[1].crew.length;i++) {
@@ -65,6 +69,20 @@ const Movie = () => {
                 };
                 castArr.push(casts);
             }
+            let similarArr = [],
+            itemSimilar;
+            for (let i = 0; i < 9; i++) {
+                itemSimilar = {
+                    movieId : data[2].results[i].id,
+                    title : data[2].results[i].title,
+                    release : data[2].results[i].release_date,
+                    img : data[2].results[i].poster_path,
+                    overview : data[2].results[i].overview,
+                    id : uuidv4()
+                };
+                similarArr.push(itemSimilar);
+            };
+            setSimilarData(similarArr);
             setBDrop("https://image.tmdb.org/t/p/original" + data[0].backdrop_path);
             setMovieData(item);
             setCastData(castArr);
@@ -118,6 +136,9 @@ const Movie = () => {
                 </div>
             </section>
             <section className='castSection'>
+                <div className="castSection_title">
+                    <h2 className=''>Casting du film</h2>
+                </div>
                 <div className="castSection_container">
                 {castData.map(el => {
                     if (toggleCastAll) {
@@ -154,6 +175,21 @@ const Movie = () => {
                     }
                 </div>
             </section>
+
+            <section className='similarSection'>
+                <div className="similarSection_title">
+                    <h2 className=''>Films similaires</h2>
+                </div>
+                    <ul>
+                        {similarData.map(el => {
+                            return (
+                                <MovieCard title={el.title} key={el.id} id={el.id} release={el.release}
+                                poster={el.img} overview={el.overview} movieId={el.movieId} />
+                                )
+                        })}
+                    </ul>
+            </section>
+
         </main>
         );
 };

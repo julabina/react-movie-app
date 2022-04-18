@@ -1,4 +1,7 @@
 .saga {
+    &_infos {
+       overflow: scroll;
+    }
     &_parts {
         display: flex;
         flex-direction: column;
