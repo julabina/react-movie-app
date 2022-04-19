@@ -21,8 +21,17 @@
         border-bottom: 1px solid #3337;
         border-right: 1px solid #3337;
         border-left: 1px solid #3337;
-        img {
-            object-fit: cover;
+        &_imgCont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 200px;
+            min-width: 200px;
+            color: #f3f3f3;
+            background: map-get($colors, tertiary);
+            img {
+                object-fit: cover;
+            }
         }
         &_cont {
             display: flex;
@@ -90,4 +99,5 @@
     display: flex;
     flex-direction: column;
     align-items:  center;
+    margin-bottom: 30px;
 }

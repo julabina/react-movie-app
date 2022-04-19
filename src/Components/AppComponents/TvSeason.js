@@ -36,7 +36,9 @@ const toggleEpisodeHide = () => {
                 <h2>{props.name}</h2>
             </div>
             <div className="tvSeasonCard_main">
-                <img src={props.poster} alt={"affiche de la " + props.name} />
+                <div className="tvSeasonCard_main_imgCont">
+                    <img src={props.poster} alt={"affiche de la " + props.name} />
+                </div>
                 <div className="tvSeasonCard_main_cont">
                     <div className="tvSeasonCard_main_cont_infos">
                         {props.overview}

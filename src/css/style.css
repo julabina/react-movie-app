@@ -355,7 +355,16 @@ body {
   border-right: 1px solid #3337;
   border-left: 1px solid #3337;
 }
-.tvSeasonCard_main img {
+.tvSeasonCard_main_imgCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  min-width: 200px;
+  color: #f3f3f3;
+  background: #333;
+}
+.tvSeasonCard_main_imgCont img {
   object-fit: cover;
 }
 .tvSeasonCard_main_cont {
@@ -422,6 +431,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .modalAbout_overlay {
@@ -1259,6 +1269,7 @@ footer {
   margin: 0 20px 40px;
   border-radius: 3px;
   transition: transform 250ms ease-in-out;
+  background: #f3f3f3;
 }
 .castSection_container_casting_img {
   display: flex;
