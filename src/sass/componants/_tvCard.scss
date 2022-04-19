@@ -35,6 +35,16 @@
             overflow: scroll;
         }
     }
+    &_tvLogo {
+        position: absolute;
+        color: map-get($map: $colors, $key: secondary);
+        background: #f3f3f3 ;
+        border-radius: 5px;
+        padding: 2px;
+        font-weight: 600;
+        border: 2px solid map-get($map: $colors, $key: primary );
+        margin: 5px 0 0 5px;
+    }
     &:hover {
         transform: scale(1.03);
         transition: transform 300ms ease-in-out;

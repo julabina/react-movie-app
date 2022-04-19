@@ -102,7 +102,7 @@ const Home = () => {
             <ul>
                 {searchData.map(el => {
                     if (el.type === "movie") {
-                        return  <MovieCard title={el.title} key={el.id} id={el.id} release={el.release} poster={el.img} overview={el.overview} movieId={el.movieId} fromHome={true} />
+                        return  <MovieCard title={el.title} key={el.id} id={el.id} release={el.release} poster={el.img} overview={el.overview} movieId={el.movieId} />
                     } else if (el.type === "tv") {
                         return  <TvCard title={el.title} key={el.id} id={el.id} poster={el.poster} overview={el.overview} tvId={el.tvId} fromHome={true} />
                     } else if (el.type === "person") {

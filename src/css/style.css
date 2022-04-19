@@ -186,6 +186,16 @@ body {
   text-indent: 30px;
   overflow: scroll;
 }
+.tvCard_tvLogo {
+  position: absolute;
+  color: #003166;
+  background: #f3f3f3;
+  border-radius: 5px;
+  padding: 2px;
+  font-weight: 600;
+  border: 2px solid #D8464B;
+  margin: 5px 0 0 5px;
+}
 .tvCard:hover {
   transform: scale(1.03);
   transition: transform 300ms ease-in-out;
