@@ -182,7 +182,7 @@ const Movie = () => {
                     <ul>
                         {similarData.map(el => {
                             return (
-                                <MovieCard title={el.title} key={el.id} id={el.id} release={el.release}
+                                <MovieCard fromMovie={true} title={el.title} key={el.id} id={el.id} release={el.release}
                                 poster={el.img} overview={el.overview} movieId={el.movieId} />
                                 )
                         })}

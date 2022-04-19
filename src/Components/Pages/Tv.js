@@ -193,7 +193,7 @@ const Tv = () => {
                     <ul>
                         {similarData.map(el => {
                             return (
-                                <TvCard title={el.title} key={el.id} id={el.id} poster={el.img} overview={el.overview} tvId={el.serieId} />
+                                <TvCard fromTv={true} title={el.title} key={el.id} id={el.id} poster={el.img} overview={el.overview} tvId={el.serieId} />
                                 )
                         })}
                     </ul>
