@@ -1898,6 +1898,10 @@ footer {
   opacity: 0.8;
 }
 @media screen and (max-width: 1180px) {
+  .saga_infos {
+    height: auto;
+    overflow: inherit;
+  }
   .saga_parts_tabs {
     width: 90%;
   }

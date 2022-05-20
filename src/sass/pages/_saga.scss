@@ -83,6 +83,10 @@
         }
     }
     @include forTablet {
+        &_infos {
+            height: auto;
+            overflow: inherit;
+        }
         &_parts {
             &_tabs {
                 width: 90%;
