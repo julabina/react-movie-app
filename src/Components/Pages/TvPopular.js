@@ -10,6 +10,8 @@ const TvPopular = () => {
     const [totalPages, setTotalPages] = useState();
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+        
         fetch('https://api.themoviedb.org/3/tv/popular?api_key=' + process.env.REACT_APP_API_KEY + '&page=' + changePagePopular + '&language=fr-FR')
         .then(res => res.json())
         .then(data => {

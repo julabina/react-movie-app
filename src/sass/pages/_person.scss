@@ -48,6 +48,24 @@
         margin-top: 40px;
         box-shadow: 0 7px 15px rgba(0, 0, 0, 0.267);
     }
+    @include forTablet {
+        &_top {
+            width: 100%;
+            flex-direction: column-reverse;
+            align-items: center;
+            margin: initial;
+            &_infos {
+                width: 100%;
+            }
+            &_profile {
+                display: flex;
+                justify-content: center;
+            }
+        }
+        &_bio {
+            width: 90%;
+        }
+    }
 }
 
 .personCredit {
@@ -64,6 +82,18 @@
             cursor: pointer;
             &--actif {
                 border : 5px solid map-get($map: $colors, $key:primary )
+            }
+        }
+    }
+    @include forTablet {
+        ul {
+            margin-bottom: 30px;
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+
             }
         }
     }

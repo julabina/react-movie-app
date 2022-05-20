@@ -9,6 +9,8 @@ const PersonList = () => {
     const [personData, setPersonData] =  useState([]);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+        
         fetch('https://api.themoviedb.org/3/person/popular?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&page=' + actualPage)
         .then(res => res.json())
         .then(data => {

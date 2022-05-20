@@ -10,6 +10,8 @@ const MovieTopRated = () => {
     const [totalPages, setTotalPages] = useState();
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+        
         fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=' + process.env.REACT_APP_API_KEY + '&page=' + changePageTopRated + '&language=fr-FR')
         .then(res => res.json())
         .then(data => {

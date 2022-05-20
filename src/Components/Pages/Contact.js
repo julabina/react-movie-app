@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Contact = () => {
 
@@ -10,6 +10,9 @@ const Contact = () => {
 
     const [msgToSend, setMsgToSend] = useState([]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    },[]);
 
     const sendMessage = (e) => {
         e.preventDefault();

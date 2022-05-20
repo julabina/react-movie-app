@@ -10,6 +10,8 @@ const TvList = () => {
     const [totalPages, setTotalPages] = useState();
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+        
         fetch('https://api.themoviedb.org/3/discover/tv?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&without_genres=16&sort_by=' + tvListOption[0] + '.' + tvListOption[1] + '&page=' + tvListOption[2] + '&vote_count.gte=1000&include_null_first_air_dates=false')
         .then(res => res.json())
         .then(data => {

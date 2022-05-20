@@ -17,6 +17,8 @@ const Tv = () => {
     const [toggleCastAll, setToggleCastAll] = useState(false);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+        
         Promise.all([
             fetch('https://api.themoviedb.org/3/tv/' + params.id + '?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR').then(res => res.json()),
             fetch('https://api.themoviedb.org/3/tv/' + params.id + '/credits?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR').then(res => res.json()),

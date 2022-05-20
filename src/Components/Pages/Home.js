@@ -14,6 +14,8 @@ const Home = () => {
     const [totalPages, setTotalPages] = useState();
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+
         if (actualPage > 0) {
             fetch('https://api.themoviedb.org/3/search/multi?api_key=' + process.env.REACT_APP_API_KEY + '&language=fr-FR&query=' + searchValue + '&page=' + actualPage + '&include_adult=false')
             .then(res => res.json())

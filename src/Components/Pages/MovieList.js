@@ -10,6 +10,8 @@ const MovieList = () => {
     const [totalPages, setTotalPages] = useState();
     
     useEffect(() => {
+        window.scrollTo(0, 0);
+
         fetch('https://api.themoviedb.org/3/discover/movie?api_key=' + process.env.REACT_APP_API_KEY +'&language=fr-FR&sort_by=' + movieListOption[0] + '.' + movieListOption[1] + '&include_adult=false&include_video=false&page=' + movieListOption[2] + '&vote_count.gte=400')
         .then(res => res.json())
         .then(data => {

@@ -82,4 +82,14 @@
             }
         }
     }
+    @include forTablet {
+        &_parts {
+            &_tabs {
+                width: 90%;
+            }
+            &_infos {
+                width: 90%;
+            }
+        }
+    }
 }

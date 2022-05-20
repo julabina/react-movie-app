@@ -829,6 +829,11 @@ main {
   min-height: 78vh;
   overflow: hidden;
 }
+@media screen and (max-width: 1180px) {
+  main {
+    min-height: 80vh;
+  }
+}
 
 footer {
   position: relative;
@@ -950,6 +955,30 @@ footer {
   width: 800px;
   border-bottom: 1px solid rgba(128, 128, 128, 0.247);
   margin: 30px 0 20px 0;
+}
+@media screen and (max-width: 1180px) {
+  .home ul {
+    width: 100%;
+  }
+  .home ul a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .home_search {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 840px) {
+  .home_linkContainer {
+    flex-direction: column;
+  }
+  .home_linkContainer_link {
+    width: 300px;
+  }
+  .home_search {
+    width: 90%;
+  }
 }
 
 .movieList {
@@ -1241,7 +1270,7 @@ footer {
     align-items: center;
   }
   .movieInfosContainer_release {
-    width: 50%;
+    width: 90%;
     margin: 35px 0 25px;
     padding: 25px 25px;
   }
@@ -1257,7 +1286,7 @@ footer {
   align-items: center;
 }
 .castSection_title {
-  z-index: 1;
+  z-index: 0;
   font-weight: 600;
   margin-bottom: -30px;
   width: 1100px;
@@ -1311,7 +1340,7 @@ footer {
 }
 .castSection_container_btnCont {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   width: 1100px;
   margin-top: -30px;
   padding: 0 10px 10px 0;
@@ -1324,20 +1353,65 @@ footer {
 .castSection_container_btnCont_btn:hover {
   opacity: 0.7;
 }
+@media screen and (max-width: 1180px) {
+  .castSection {
+    margin-top: 50px;
+  }
+  .castSection_title {
+    width: 90%;
+    padding: 20px 40px;
+    background: #D8464B;
+    margin-left: initial;
+    border-radius: 5px 5px 0 0;
+  }
+  .castSection_title h2 {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+  .castSection_container {
+    width: 90%;
+    padding: 50px 0 10px;
+  }
+}
+@media screen and (max-width: 840px) {
+  .castSection_container {
+    justify-content: center;
+  }
+}
 
 .similarSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 50px 0;
+  width: 100%;
 }
 .similarSection_title {
-  z-index: 1;
+  z-index: 0;
   font-weight: 600;
   margin-bottom: -30px;
   width: 1100px;
   margin-left: 80px;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 1180px) {
+  .similarSection ul a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .similarSection_title {
+    width: 90%;
+    padding: 20px 40px;
+    background: #D8464B;
+    margin-left: initial;
+    border-radius: 5px;
+  }
+  .similarSection_title h2 {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
 }
 
 .tvBackdrop {
@@ -1504,7 +1578,7 @@ footer {
     margin-bottom: 50px;
   }
   .tvInfosContainer_release {
-    width: 50%;
+    width: 90%;
     margin: 35px 0 25px;
     padding: 25px 25px;
   }
@@ -1679,6 +1753,24 @@ footer {
   margin-top: 40px;
   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.267);
 }
+@media screen and (max-width: 1180px) {
+  .person_top {
+    width: 100%;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: initial;
+  }
+  .person_top_infos {
+    width: 100%;
+  }
+  .person_top_profile {
+    display: flex;
+    justify-content: center;
+  }
+  .person_bio {
+    width: 90%;
+  }
+}
 
 .personCredit_switch {
   width: 100%;
@@ -1696,6 +1788,17 @@ footer {
 .personCredit_switch_btn--actif {
   border: 5px solid #D8464B;
 }
+@media screen and (max-width: 1180px) {
+  .personCredit ul {
+    margin-bottom: 30px;
+  }
+  .personCredit ul a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
 
 .personList {
   display: flex;
@@ -1705,6 +1808,12 @@ footer {
 .personList_title {
   font-size: 3.2em;
   margin: 40px 0 20px 0;
+}
+.personList ul a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .saga_infos {
@@ -1787,6 +1896,14 @@ footer {
 }
 .saga_parts_infos_bot_movieBtn:hover {
   opacity: 0.8;
+}
+@media screen and (max-width: 1180px) {
+  .saga_parts_tabs {
+    width: 90%;
+  }
+  .saga_parts_infos {
+    width: 90%;
+  }
 }
 
 .contactCont {

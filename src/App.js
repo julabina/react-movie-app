@@ -21,8 +21,10 @@ import ToTop from "./Components/AppComponents/ToTop";
 import Person from "./Components/Pages/Person";
 import PersonList from "./Components/Pages/PersonList";
 import Saga from "./Components/Pages/Saga";
+import { useEffect } from "react";
 
 function App() {
+
   return (
     <>
       <Header />
